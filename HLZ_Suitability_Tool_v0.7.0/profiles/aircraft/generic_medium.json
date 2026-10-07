@@ -1,0 +1,22 @@
+{
+  "_license": "SPDX-License-Identifier: GPL-2.0-or-later",
+  "_copyright": "Copyright (c) 2026 Eui Soo SON",
+  "_notes": "PLANNING DEFAULTS ONLY - replace every value with operator/authority-approved data before operational use.",
+  "profile_id": "generic-medium-v0.4",
+  "display_name": "Generic medium rotary-wing",
+  "description": "Medium utility helicopter class (v0.3 defaults). PLANNING DEFAULTS ONLY - replace every value with operator/authority-approved data before operational use.",
+  "tdp_diameter_m": 50.0,
+  "cleared_ring_m": 20.0,
+  "max_landing_slope_deg": 7.0,
+  "max_upslope_landing_deg": 15.0,
+  "max_roughness_m": 0.3,
+  "tdp_obstacle_height_m": 0.3,
+  "ring_obstacle_height_m": 1.0,
+  "approach_range_m": 1000.0,
+  "corridor_half_width_deg": 15.0,
+  "suitable_angle_deg": 3.0,
+  "unsuitable_angle_deg": 7.0,
+  "clearance_height_m": 2.0,
+  "hover_ceiling_ige_ft": null,
+  "hover_ceiling_oge_ft": null
+}

@@ -1,0 +1,801 @@
+# SPDX-License-Identifier: GPL-2.0-or-later
+# Copyright (c) 2026 Eui Soo SON
+13:57:36 | HLZ Suitability Tool v0.7.0 - ArcPy smoke test
+13:57:36 | python 3.13.13 | C:\ProgramData\anaconda3\envs\hlz-arcgis-v070\python.exe
+13:57:36 | platform Windows-11-10.0.26300-SP0 | env hlz-arcgis-v070
+13:57:39 | ArcGIS ArcGISPro 3.7.2 | license ArcView
+13:57:39 | numpy 2.3.5 | scipy 1.16.3
+13:57:39 | workspace C:\Users\Son\AppData\Local\Temp\hlz_smoke_v067_2iwhwufv
+13:57:39 | Synthetic scene is 2.4 x 2.4 km; scenarios D/E use 300 k-cell tiles to force tiling
+13:57:43 | synthetic NoData hole: 961 cells -> expected valid cells: whole DTM 5,759,039, AOI 359,039
+13:57:45 | created dtm: 2400 x 2400 cells
+13:57:46 | created dsm: 2400 x 2400 cells
+13:57:48 | created dsm_2m (2 m cells) for the resampling scenario
+13:57:48 | created AOI polygon (central 600 x 600 m)
+13:57:48 | created a 240 x 180 m 'lake' polygon in the middle of the AOI (exclusion test)
+13:57:50 | imported toolbox C:\Users\Son\Documents\HLZ\HLZ_Suitability_Tool_v0.7.0\toolbox\HLZ_Suitability.pyt
+13:57:50 | --- scenario A_dsm_aoi ---
+13:59:49 |   GP> Start Time: October 7, 2026 1:57:51 PM
+13:59:49 |   GP> HLZ Suitability Tool v0.7.0 | run folder: C:\Users\Son\AppData\Local\Temp\hlz_smoke_v067_2iwhwufv\outputs\A_dsm_aoi
+13:59:49 |   GP> Aircraft: Generic medium rotary-wing | Mission: General HLZ screening | Doctrine: Generic planning thresholds
+13:59:49 |   GP> Analysis area 600 x 600 cells at 1.000 m (0.4 km2) in 1 tile(s) of up to 3,896 x 3,896 cells; estimated roughly 1 s-2 s
+13:59:49 |   GP> No exclusion layer: water, wetlands and other unsuitable surfaces are NOT excluded, so a lake can appear as a perfect landing zone. Add a water polygon layer and check candidates on imagery
+13:59:49 |   GP> No obstacle list: towers, masts and wires are checked only if the DSM captured them, and lidar often misses thin structures. Add an Obstacles layer or file for a safer result
+13:59:49 |   GP> OAT given but the aircraft profile has no hover ceilings: density altitude is reported but not used to reject sites
+13:59:49 |   GP> Tile 1/1: 68 candidate(s)
+13:59:49 |   GP> Candidates: 68 after removing 0 tile-seam duplicates (exact checks 73, rejected 5)
+13:59:49 |   GP> Finalising rasters...
+13:59:49 |   GP> Mosaicking 1 tile(s) into Ground_Class
+13:59:49 |   GP> Mosaicking 1 tile(s) into Slope_deg
+13:59:49 |   GP> Mosaicking 1 tile(s) into Roughness_m
+13:59:49 |   GP> Mosaicking 1 tile(s) into Obstacle_Height_m
+13:59:49 |   GP> Writing vector layers...
+13:59:49 |   GP> Run completed in 115.3 s
+13:59:49 |   GP>  
+13:59:49 |   GP> ====================================================================================================
+13:59:49 |   GP> RESULTS - 68 candidates (best first)
+13:59:49 |   GP> Rank  HLZ_ID   Rating            Score  Slope  Approach(from/angle)  MGRS                   Main limiting factor
+13:59:49 |   GP> ----  -------  ----------------  -----  -----  --------------------  ---------------------  --------------------
+13:59:49 |   GP>    1  HLZ-01   Highly suitable    99.1   0.3d  250 / -0.4 deg        18T VR 45906 30941     None - all criteria well within limits
+13:59:49 |   GP>    2  HLZ-02   Highly suitable    99.1   0.3d  250 / -0.4 deg        18T VR 45906 31016     None - all criteria well within limits
+13:59:49 |   GP>    3  HLZ-03   Highly suitable    99.1   0.3d  240 / -0.4 deg        18T VR 45978 30914     None - all criteria well within limits
+13:59:49 |   GP>    4  HLZ-04   Highly suitable    99.1   0.3d  250 / -0.4 deg        18T VR 45903 31227     None - all criteria well within limits
+13:59:49 |   GP>    5  HLZ-05   Highly suitable    99.1   0.3d  250 / -0.4 deg        18T VR 45922 31151     None - all criteria well within limits
+13:59:49 |   GP>    6  HLZ-06   Highly suitable    99.1   0.3d  250 / -0.4 deg        18T VR 45906 31066     None - all criteria well within limits
+13:59:49 |   GP>    7  HLZ-07   Highly suitable    99.1   0.3d  250 / -0.4 deg        18T VR 45946 31107     None - all criteria well within limits
+13:59:49 |   GP>    8  HLZ-08   Highly suitable    99.1   0.3d  240 / -0.4 deg        18T VR 45970 31063     None - all criteria well within limits
+13:59:49 |   GP>    9  HLZ-09   Highly suitable    99.1   0.3d  240 / -0.4 deg        18T VR 46030 30941     None - all criteria well within limits
+13:59:49 |   GP>   10  HLZ-10   Highly suitable    99.1   0.3d  250 / -0.4 deg        18T VR 45906 31316     None - all criteria well within limits
+13:59:49 |   GP>   11  HLZ-11   Highly suitable    99.1   0.3d  240 / -0.4 deg        18T VR 45987 31146     None - all criteria well within limits
+13:59:49 |   GP>   12  HLZ-12   Highly suitable    99.1   0.3d  240 / -0.4 deg        18T VR 46079 30968     None - all criteria well within limits
+13:59:49 |   GP>   13  HLZ-13   Highly suitable    99.1   0.3d  240 / -0.4 deg        18T VR 46005 31018     None - all criteria well within limits
+13:59:49 |   GP>   14  HLZ-14   Highly suitable    99.1   0.3d  240 / -0.4 deg        18T VR 46011 31102     None - all criteria well within limits
+13:59:49 |   GP>   15  HLZ-15   Highly suitable    99.1   0.3d  240 / -0.4 deg        18T VR 46035 31058     None - all criteria well within limits
+13:59:49 |   GP> ... 53 more candidates in the CSV / HTML report
+13:59:49 |   GP> ====================================================================================================
+13:59:49 |   GP> Geodatabase : C:\Users\Son\AppData\Local\Temp\hlz_smoke_v067_2iwhwufv\outputs\A_dsm_aoi\HLZ_Results.gdb
+13:59:49 |   GP> HTML report : C:\Users\Son\AppData\Local\Temp\hlz_smoke_v067_2iwhwufv\outputs\A_dsm_aoi\HLZ_Report.html
+13:59:49 |   GP> CSV table   : C:\Users\Son\AppData\Local\Temp\hlz_smoke_v067_2iwhwufv\outputs\A_dsm_aoi\HLZ_Candidates.csv
+13:59:49 |   GP> Run log     : C:\Users\Son\AppData\Local\Temp\hlz_smoke_v067_2iwhwufv\outputs\A_dsm_aoi\hlz_run.log
+13:59:49 |   GP> Planning aid only: confirm every site by ground/aerial reconnaissance and with the operator's performance data.
+13:59:49 |   GP> Succeeded at October 7, 2026 1:59:49 PM (Elapsed Time: 1 minutes 57 seconds)
+13:59:49 | scenario A_dsm_aoi finished in 118.5 s
+13:59:49 | PASS A_dsm_aoi: tool ran without error
+13:59:49 | PASS A_dsm_aoi: HLZ_Footprints exists
+13:59:49 | PASS A_dsm_aoi: HLZ_Best_Approach exists
+13:59:49 | PASS A_dsm_aoi: HLZ_Approach_Sectors exists
+13:59:49 | PASS A_dsm_aoi: Ground_Class exists
+13:59:49 | PASS A_dsm_aoi: Slope_deg exists
+13:59:50 | PASS A_dsm_aoi: footprints count = 68
+13:59:50 |   fields: ['OBJECTID', 'Shape', 'Shape_Length', 'Shape_Area', 'Rank', 'HLZ_ID', 'Rating', 'Score', 'Status', 'Confidence', 'MGRS', 'Latitude', 'Longitude', 'Elev_m', 'Slope_deg', 'Aspect_deg', 'Upslope_Only', 'Rough_m', 'Obst_TDP_m', 'Obst_Ring_m', 'Excl_Dist_m', 'Obst_Dist_m', 'Obst_Name', 'Dist_Ctr_m', 'Brg_Ctr', 'Appr_From', 'Land_Hdg', 'Appr_Angle', 'Clear_Sect', 'Assess_Sect', 'Opposing', 'Appr_Basis', 'DA_ft', 'Limiting', 'Notes']
+13:59:50 | PASS A_dsm_aoi: key fields present
+13:59:50 |   top: (1, 'HLZ-01', 'Highly suitable', 99.1, '18T VR 45906 30941', 45.4299027, -75.6915235)
+13:59:50 |   top: (2, 'HLZ-02', 'Highly suitable', 99.1, '18T VR 45906 31016', 45.4305777, -75.6915317)
+13:59:50 |   top: (3, 'HLZ-03', 'Highly suitable', 99.1, '18T VR 45978 30914', 45.4296652, -75.6906002)
+13:59:50 |   top: (4, 'HLZ-04', 'Highly suitable', 99.1, '18T VR 45903 31227', 45.4324766, -75.6915933)
+13:59:50 |   top: (5, 'HLZ-05', 'Highly suitable', 99.1, '18T VR 45922 31151', 45.431794, -75.6913421)
+13:59:50 |   ratings present: ['Highly suitable', 'Suitable']
+13:59:50 | PASS A_dsm_aoi: every candidate has an MGRS
+13:59:50 | PASS A_dsm_aoi: lat/long near Ottawa
+13:59:50 | PASS A_dsm_aoi: CSV header first
+13:59:50 | PASS A_dsm_aoi: HTML report written
+13:59:50 | PASS A_dsm_aoi: NoData hole masked (valid cells 359,039, expected 359,039)
+13:59:50 |   tiles: 1 | seam duplicates removed: 0
+13:59:50 |   Ground_Class raster 600 x 600
+13:59:50 | PASS A_dsm_aoi: Ground_Class covers the AOI only
+13:59:50 |   run-log> 2026-10-07 13:57:53 | WARNING | No exclusion layer: water, wetlands and other unsuitable surfaces are NOT excluded, so a lake can appear as a perfect landing zone. Add a water polygon layer and check candidates on imagery
+13:59:50 |   run-log> 2026-10-07 13:57:53 | WARNING | OAT given but the aircraft profile has no hover ceilings: density altitude is reported but not used to reject sites
+13:59:50 | --- scenario B_dtm_only ---
+14:01:18 |   GP> Start Time: October 7, 2026 1:59:51 PM
+14:01:18 |   GP> HLZ Suitability Tool v0.7.0 | run folder: C:\Users\Son\AppData\Local\Temp\hlz_smoke_v067_2iwhwufv\outputs\B_dtm_only
+14:01:18 |   GP> Aircraft: Generic medium rotary-wing | Mission: General HLZ screening | Doctrine: Generic planning thresholds
+14:01:18 |   GP> Analysis area 600 x 600 cells at 1.000 m (0.4 km2) in 1 tile(s) of up to 3,896 x 3,896 cells; estimated roughly 1 s-2 s
+14:01:18 |   GP> No DSM supplied: trees/buildings are NOT assessed and approaches are checked against bare terrain only; ratings are capped at Marginal
+14:01:18 |   GP> No exclusion layer: water, wetlands and other unsuitable surfaces are NOT excluded, so a lake can appear as a perfect landing zone. Add a water polygon layer and check candidates on imagery
+14:01:18 |   GP> No obstacle list: towers, masts and wires are checked only if the DSM captured them, and lidar often misses thin structures. Add an Obstacles layer or file for a safer result
+14:01:18 |   GP> OAT given but the aircraft profile has no hover ceilings: density altitude is reported but not used to reject sites
+14:01:18 |   GP> Tile 1/1: 100 candidate(s)
+14:01:18 |   GP> Candidates: 100 after removing 0 tile-seam duplicates (exact checks 118, rejected 18)
+14:01:18 |   GP> Finalising rasters...
+14:01:18 |   GP> Mosaicking 1 tile(s) into Ground_Class
+14:01:18 |   GP> Mosaicking 1 tile(s) into Slope_deg
+14:01:18 |   GP> Mosaicking 1 tile(s) into Roughness_m
+14:01:18 |   GP> Writing vector layers...
+14:01:18 |   GP> Run completed in 84.4 s
+14:01:18 |   GP>  
+14:01:18 |   GP> ====================================================================================================
+14:01:18 |   GP> RESULTS - 100 candidates (best first)
+14:01:18 |   GP> Rank  HLZ_ID   Rating            Score  Slope  Approach(from/angle)  MGRS                   Main limiting factor
+14:01:18 |   GP> ----  -------  ----------------  -----  -----  --------------------  ---------------------  --------------------
+14:01:18 |   GP>    1  HLZ-001  Marginal           76.6   0.3d  250 / -0.4 deg        18T VR 45936 31499     Obstacles not assessed (no DSM) - rating capped at Marginal
+14:01:18 |   GP>    2  HLZ-002  Marginal           76.6   0.3d  240 / -0.4 deg        18T VR 45998 31499     Obstacles not assessed (no DSM) - rating capped at Marginal
+14:01:18 |   GP>    3  HLZ-003  Marginal           76.6   0.3d  250 / -0.4 deg        18T VR 45900 31453     Obstacles not assessed (no DSM) - rating capped at Marginal
+14:01:18 |   GP>    4  HLZ-004  Marginal           76.6   0.3d  250 / -0.4 deg        18T VR 45922 31408     Obstacles not assessed (no DSM) - rating capped at Marginal
+14:01:18 |   GP>    5  HLZ-005  Marginal           76.6   0.3d  240 / -0.4 deg        18T VR 46061 31499     Obstacles not assessed (no DSM) - rating capped at Marginal
+14:01:18 |   GP>    6  HLZ-006  Marginal           76.6   0.3d  240 / -0.4 deg        18T VR 46111 31499     Obstacles not assessed (no DSM) - rating capped at Marginal
+14:01:18 |   GP>    7  HLZ-007  Marginal           76.6   0.3d  240 / -0.4 deg        18T VR 45960 31455     Obstacles not assessed (no DSM) - rating capped at Marginal
+14:01:18 |   GP>    8  HLZ-008  Marginal           76.6   0.3d  240 / -0.4 deg        18T VR 45982 31410     Obstacles not assessed (no DSM) - rating capped at Marginal
+14:01:18 |   GP>    9  HLZ-009  Marginal           76.6   0.3d  250 / -0.4 deg        18T VR 45900 31328     Obstacles not assessed (no DSM) - rating capped at Marginal
+14:01:18 |   GP>   10  HLZ-010  Marginal           76.6   0.3d  240 / -0.4 deg        18T VR 46161 31499     Obstacles not assessed (no DSM) - rating capped at Marginal
+14:01:18 |   GP>   11  HLZ-011  Marginal           76.6   0.3d  240 / -0.4 deg        18T VR 46022 31455     Obstacles not assessed (no DSM) - rating capped at Marginal
+14:01:18 |   GP>   12  HLZ-012  Marginal           76.6   0.3d  240 / -0.4 deg        18T VR 46083 31454     Obstacles not assessed (no DSM) - rating capped at Marginal
+14:01:18 |   GP>   13  HLZ-013  Marginal           76.6   0.3d  240 / -0.4 deg        18T VR 46046 31411     Obstacles not assessed (no DSM) - rating capped at Marginal
+14:01:18 |   GP>   14  HLZ-014  Marginal           76.6   0.3d  240 / -0.4 deg        18T VR 46006 31366     Obstacles not assessed (no DSM) - rating capped at Marginal
+14:01:18 |   GP>   15  HLZ-015  Marginal           76.6   0.3d  250 / -0.4 deg        18T VR 45944 31363     Obstacles not assessed (no DSM) - rating capped at Marginal
+14:01:18 |   GP> ... 85 more candidates in the CSV / HTML report
+14:01:18 |   GP> ====================================================================================================
+14:01:18 |   GP> Geodatabase : C:\Users\Son\AppData\Local\Temp\hlz_smoke_v067_2iwhwufv\outputs\B_dtm_only\HLZ_Results.gdb
+14:01:18 |   GP> HTML report : C:\Users\Son\AppData\Local\Temp\hlz_smoke_v067_2iwhwufv\outputs\B_dtm_only\HLZ_Report.html
+14:01:18 |   GP> CSV table   : C:\Users\Son\AppData\Local\Temp\hlz_smoke_v067_2iwhwufv\outputs\B_dtm_only\HLZ_Candidates.csv
+14:01:18 |   GP> Run log     : C:\Users\Son\AppData\Local\Temp\hlz_smoke_v067_2iwhwufv\outputs\B_dtm_only\hlz_run.log
+14:01:18 |   GP> Planning aid only: confirm every site by ground/aerial reconnaissance and with the operator's performance data.
+14:01:18 |   GP> Succeeded at October 7, 2026 2:01:18 PM (Elapsed Time: 1 minutes 26 seconds)
+14:01:18 | scenario B_dtm_only finished in 87.5 s
+14:01:18 | PASS B_dtm_only: tool ran without error
+14:01:18 | PASS B_dtm_only: HLZ_Footprints exists
+14:01:18 | PASS B_dtm_only: HLZ_Best_Approach exists
+14:01:18 | PASS B_dtm_only: HLZ_Approach_Sectors exists
+14:01:18 | PASS B_dtm_only: Ground_Class exists
+14:01:18 | PASS B_dtm_only: Slope_deg exists
+14:01:18 | PASS B_dtm_only: footprints count = 100
+14:01:18 |   fields: ['OBJECTID', 'Shape', 'Shape_Length', 'Shape_Area', 'Rank', 'HLZ_ID', 'Rating', 'Score', 'Status', 'Confidence', 'MGRS', 'Latitude', 'Longitude', 'Elev_m', 'Slope_deg', 'Aspect_deg', 'Upslope_Only', 'Rough_m', 'Obst_TDP_m', 'Obst_Ring_m', 'Excl_Dist_m', 'Obst_Dist_m', 'Obst_Name', 'Dist_Ctr_m', 'Brg_Ctr', 'Appr_From', 'Land_Hdg', 'Appr_Angle', 'Clear_Sect', 'Assess_Sect', 'Opposing', 'Appr_Basis', 'DA_ft', 'Limiting', 'Notes']
+14:01:18 | PASS B_dtm_only: key fields present
+14:01:18 |   top: (1, 'HLZ-001', 'Marginal', 76.6, '18T VR 45936 31499', 45.4349273, -75.6912013)
+14:01:18 |   top: (2, 'HLZ-002', 'Marginal', 76.6, '18T VR 45998 31499', 45.4349321, -75.6904087)
+14:01:18 |   top: (3, 'HLZ-003', 'Marginal', 76.6, '18T VR 45900 31453', 45.4345105, -75.6916565)
+14:01:18 |   top: (4, 'HLZ-004', 'Marginal', 76.6, '18T VR 45922 31408', 45.4341072, -75.6913703)
+14:01:18 |   top: (5, 'HLZ-005', 'Marginal', 76.6, '18T VR 46061 31499', 45.434937, -75.6896033)
+14:01:18 |   ratings present: ['Marginal']
+14:01:18 | PASS B_dtm_only: every candidate has an MGRS
+14:01:18 | PASS B_dtm_only: lat/long near Ottawa
+14:01:18 | PASS B_dtm_only: no-DSM cap at Marginal
+14:01:18 | PASS B_dtm_only: CSV header first
+14:01:18 | PASS B_dtm_only: HTML report written
+14:01:18 | PASS B_dtm_only: NoData hole masked (valid cells 359,039, expected 359,039)
+14:01:18 |   tiles: 1 | seam duplicates removed: 0
+14:01:19 |   Ground_Class raster 600 x 600
+14:01:19 | PASS B_dtm_only: Ground_Class covers the AOI only
+14:01:19 |   run-log> 2026-10-07 13:59:53 | WARNING | No DSM supplied: trees/buildings are NOT assessed and approaches are checked against bare terrain only; ratings are capped at Marginal
+14:01:19 |   run-log> 2026-10-07 13:59:53 | WARNING | No exclusion layer: water, wetlands and other unsuitable surfaces are NOT excluded, so a lake can appear as a perfect landing zone. Add a water polygon layer and check candidates on imagery
+14:01:19 |   run-log> 2026-10-07 13:59:53 | WARNING | OAT given but the aircraft profile has no hover ceilings: density altitude is reported but not used to reject sites
+14:01:19 | --- scenario C_dsm_2m ---
+14:03:33 |   GP> Start Time: October 7, 2026 2:01:20 PM
+14:03:33 |   GP> HLZ Suitability Tool v0.7.0 | run folder: C:\Users\Son\AppData\Local\Temp\hlz_smoke_v067_2iwhwufv\outputs\C_dsm_2m
+14:03:33 |   GP> Aircraft: Generic medium rotary-wing | Mission: General HLZ screening | Doctrine: Generic planning thresholds
+14:03:33 |   GP> DSM grid differs from the DTM: it is resampled (bilinear) onto the DTM grid tile by tile. For large areas, snapping the DSM to the DTM once beforehand is faster.
+14:03:33 |   GP> Analysis area 600 x 600 cells at 1.000 m (0.4 km2) in 1 tile(s) of up to 3,896 x 3,896 cells; estimated roughly 1 s-2 s
+14:03:33 |   GP> No exclusion layer: water, wetlands and other unsuitable surfaces are NOT excluded, so a lake can appear as a perfect landing zone. Add a water polygon layer and check candidates on imagery
+14:03:33 |   GP> No obstacle list: towers, masts and wires are checked only if the DSM captured them, and lidar often misses thin structures. Add an Obstacles layer or file for a safer result
+14:03:33 |   GP> OAT given but the aircraft profile has no hover ceilings: density altitude is reported but not used to reject sites
+14:03:33 |   GP> Tile 1/1: 70 candidate(s)
+14:03:33 |   GP> Candidates: 70 after removing 0 tile-seam duplicates (exact checks 81, rejected 11)
+14:03:33 |   GP> Finalising rasters...
+14:03:33 |   GP> Mosaicking 1 tile(s) into Ground_Class
+14:03:33 |   GP> Mosaicking 1 tile(s) into Slope_deg
+14:03:33 |   GP> Mosaicking 1 tile(s) into Roughness_m
+14:03:33 |   GP> Mosaicking 1 tile(s) into Obstacle_Height_m
+14:03:33 |   GP> Writing vector layers...
+14:03:33 |   GP> Run completed in 2.1 min
+14:03:33 |   GP>  
+14:03:33 |   GP> ====================================================================================================
+14:03:33 |   GP> RESULTS - 70 candidates (best first)
+14:03:33 |   GP> Rank  HLZ_ID   Rating            Score  Slope  Approach(from/angle)  MGRS                   Main limiting factor
+14:03:33 |   GP> ----  -------  ----------------  -----  -----  --------------------  ---------------------  --------------------
+14:03:33 |   GP>    1  HLZ-01   Highly suitable    99.1   0.3d  250 / -0.4 deg        18T VR 45906 30941     None - all criteria well within limits
+14:03:33 |   GP>    2  HLZ-02   Highly suitable    99.1   0.3d  250 / -0.4 deg        18T VR 45906 31016     None - all criteria well within limits
+14:03:33 |   GP>    3  HLZ-03   Highly suitable    99.1   0.3d  240 / -0.4 deg        18T VR 45978 30914     None - all criteria well within limits
+14:03:33 |   GP>    4  HLZ-04   Highly suitable    99.1   0.3d  250 / -0.4 deg        18T VR 45903 31227     None - all criteria well within limits
+14:03:33 |   GP>    5  HLZ-05   Highly suitable    99.1   0.3d  250 / -0.4 deg        18T VR 45922 31151     None - all criteria well within limits
+14:03:33 |   GP>    6  HLZ-06   Highly suitable    99.1   0.3d  250 / -0.4 deg        18T VR 45906 31066     None - all criteria well within limits
+14:03:33 |   GP>    7  HLZ-07   Highly suitable    99.1   0.3d  250 / -0.4 deg        18T VR 45946 31107     None - all criteria well within limits
+14:03:33 |   GP>    8  HLZ-08   Highly suitable    99.1   0.3d  240 / -0.4 deg        18T VR 45970 31063     None - all criteria well within limits
+14:03:33 |   GP>    9  HLZ-09   Highly suitable    99.1   0.3d  240 / -0.4 deg        18T VR 46030 30941     None - all criteria well within limits
+14:03:33 |   GP>   10  HLZ-10   Highly suitable    99.1   0.3d  250 / -0.4 deg        18T VR 45906 31316     None - all criteria well within limits
+14:03:33 |   GP>   11  HLZ-11   Highly suitable    99.1   0.3d  240 / -0.4 deg        18T VR 45987 31146     None - all criteria well within limits
+14:03:33 |   GP>   12  HLZ-12   Highly suitable    99.1   0.3d  240 / -0.4 deg        18T VR 46035 31058     None - all criteria well within limits
+14:03:33 |   GP>   13  HLZ-13   Highly suitable    99.1   0.3d  240 / -0.4 deg        18T VR 46079 30968     None - all criteria well within limits
+14:03:33 |   GP>   14  HLZ-14   Highly suitable    99.1   0.3d  240 / -0.4 deg        18T VR 46101 30923     None - all criteria well within limits
+14:03:33 |   GP>   15  HLZ-15   Highly suitable    99.1   0.3d  240 / -0.4 deg        18T VR 46005 31018     None - all criteria well within limits
+14:03:33 |   GP> ... 55 more candidates in the CSV / HTML report
+14:03:33 |   GP> ====================================================================================================
+14:03:33 |   GP> Geodatabase : C:\Users\Son\AppData\Local\Temp\hlz_smoke_v067_2iwhwufv\outputs\C_dsm_2m\HLZ_Results.gdb
+14:03:33 |   GP> HTML report : C:\Users\Son\AppData\Local\Temp\hlz_smoke_v067_2iwhwufv\outputs\C_dsm_2m\HLZ_Report.html
+14:03:33 |   GP> CSV table   : C:\Users\Son\AppData\Local\Temp\hlz_smoke_v067_2iwhwufv\outputs\C_dsm_2m\HLZ_Candidates.csv
+14:03:33 |   GP> Run log     : C:\Users\Son\AppData\Local\Temp\hlz_smoke_v067_2iwhwufv\outputs\C_dsm_2m\hlz_run.log
+14:03:33 |   GP> Planning aid only: confirm every site by ground/aerial reconnaissance and with the operator's performance data.
+14:03:33 |   GP> Succeeded at October 7, 2026 2:03:33 PM (Elapsed Time: 2 minutes 12 seconds)
+14:03:33 | scenario C_dsm_2m finished in 134.1 s
+14:03:33 | PASS C_dsm_2m: tool ran without error
+14:03:33 | PASS C_dsm_2m: HLZ_Footprints exists
+14:03:33 | PASS C_dsm_2m: HLZ_Best_Approach exists
+14:03:33 | PASS C_dsm_2m: HLZ_Approach_Sectors exists
+14:03:33 | PASS C_dsm_2m: Ground_Class exists
+14:03:33 | PASS C_dsm_2m: Slope_deg exists
+14:03:33 | PASS C_dsm_2m: footprints count = 70
+14:03:33 |   fields: ['OBJECTID', 'Shape', 'Shape_Length', 'Shape_Area', 'Rank', 'HLZ_ID', 'Rating', 'Score', 'Status', 'Confidence', 'MGRS', 'Latitude', 'Longitude', 'Elev_m', 'Slope_deg', 'Aspect_deg', 'Upslope_Only', 'Rough_m', 'Obst_TDP_m', 'Obst_Ring_m', 'Excl_Dist_m', 'Obst_Dist_m', 'Obst_Name', 'Dist_Ctr_m', 'Brg_Ctr', 'Appr_From', 'Land_Hdg', 'Appr_Angle', 'Clear_Sect', 'Assess_Sect', 'Opposing', 'Appr_Basis', 'DA_ft', 'Limiting', 'Notes']
+14:03:33 | PASS C_dsm_2m: key fields present
+14:03:33 |   top: (1, 'HLZ-01', 'Highly suitable', 99.1, '18T VR 45906 30941', 45.4299027, -75.6915235)
+14:03:33 |   top: (2, 'HLZ-02', 'Highly suitable', 99.1, '18T VR 45906 31016', 45.4305777, -75.6915317)
+14:03:33 |   top: (3, 'HLZ-03', 'Highly suitable', 99.1, '18T VR 45978 30914', 45.4296652, -75.6906002)
+14:03:33 |   top: (4, 'HLZ-04', 'Highly suitable', 99.1, '18T VR 45903 31227', 45.4324766, -75.6915933)
+14:03:33 |   top: (5, 'HLZ-05', 'Highly suitable', 99.1, '18T VR 45922 31151', 45.431794, -75.6913421)
+14:03:33 |   ratings present: ['Highly suitable', 'Suitable']
+14:03:33 | PASS C_dsm_2m: every candidate has an MGRS
+14:03:33 | PASS C_dsm_2m: lat/long near Ottawa
+14:03:33 | PASS C_dsm_2m: CSV header first
+14:03:33 | PASS C_dsm_2m: HTML report written
+14:03:33 | PASS C_dsm_2m: NoData hole masked (valid cells 359,039, expected 359,039)
+14:03:33 |   tiles: 1 | seam duplicates removed: 0
+14:03:34 |   Ground_Class raster 600 x 600
+14:03:34 | PASS C_dsm_2m: Ground_Class covers the AOI only
+14:03:34 | PASS C_dsm_2m: DSM resampling warning reported
+14:03:34 |   run-log> 2026-10-07 14:01:23 | WARNING | DSM grid differs from the DTM: it is resampled (bilinear) onto the DTM grid tile by tile. For large areas, snapping the DSM to the DTM once beforehand is faster.
+14:03:34 |   run-log> 2026-10-07 14:01:23 | WARNING | No exclusion layer: water, wetlands and other unsuitable surfaces are NOT excluded, so a lake can appear as a perfect landing zone. Add a water polygon layer and check candidates on imagery
+14:03:34 |   run-log> 2026-10-07 14:01:23 | WARNING | OAT given but the aircraft profile has no hover ceilings: density altitude is reported but not used to reject sites
+14:03:34 | --- scenario D_many_tiles_aoi ---
+14:05:35 |   GP> Start Time: October 7, 2026 2:03:34 PM
+14:05:35 |   GP> HLZ Suitability Tool v0.7.0 | run folder: C:\Users\Son\AppData\Local\Temp\hlz_smoke_v067_2iwhwufv\outputs\D_many_tiles_aoi
+14:05:35 |   GP> Aircraft: Generic medium rotary-wing | Mission: General HLZ screening | Doctrine: Generic planning thresholds
+14:05:35 |   GP> Analysis area 600 x 600 cells at 1.000 m (0.4 km2) in 4 tile(s) of up to 443 x 443 cells; estimated roughly 1 s-2 s
+14:05:35 |   GP> No exclusion layer: water, wetlands and other unsuitable surfaces are NOT excluded, so a lake can appear as a perfect landing zone. Add a water polygon layer and check candidates on imagery
+14:05:35 |   GP> No obstacle list: towers, masts and wires are checked only if the DSM captured them, and lidar often misses thin structures. Add an Obstacles layer or file for a safer result
+14:05:35 |   GP> OAT given but the aircraft profile has no hover ceilings: density altitude is reported but not used to reject sites
+14:05:35 |   GP> Tile 1/4: 21 candidate(s), about 4 s left
+14:05:35 |   GP> Tile 2/4: 13 candidate(s), about 2 s left
+14:05:35 |   GP> Tile 3/4: 25 candidate(s), about 1 s left
+14:05:35 |   GP> Tile 4/4: 15 candidate(s)
+14:05:35 |   GP> Candidates: 66 after removing 8 tile-seam duplicates (exact checks 78, rejected 4)
+14:05:35 |   GP> Finalising rasters...
+14:05:35 |   GP> Mosaicking 4 tile(s) into Ground_Class
+14:05:35 |   GP> Mosaicking 4 tile(s) into Slope_deg
+14:05:35 |   GP> Mosaicking 4 tile(s) into Roughness_m
+14:05:35 |   GP> Mosaicking 4 tile(s) into Obstacle_Height_m
+14:05:35 |   GP> Writing vector layers...
+14:05:35 |   GP> Run completed in 118.7 s
+14:05:35 |   GP>  
+14:05:35 |   GP> ====================================================================================================
+14:05:35 |   GP> RESULTS - 66 candidates (best first)
+14:05:35 |   GP> Rank  HLZ_ID   Rating            Score  Slope  Approach(from/angle)  MGRS                   Main limiting factor
+14:05:35 |   GP> ----  -------  ----------------  -----  -----  --------------------  ---------------------  --------------------
+14:05:35 |   GP>    1  HLZ-01   Highly suitable    99.1   0.3d  250 / -0.4 deg        18T VR 45906 30941     None - all criteria well within limits
+14:05:35 |   GP>    2  HLZ-02   Highly suitable    99.1   0.3d  250 / -0.4 deg        18T VR 45906 31016     None - all criteria well within limits
+14:05:35 |   GP>    3  HLZ-03   Highly suitable    99.1   0.3d  240 / -0.4 deg        18T VR 45978 30914     None - all criteria well within limits
+14:05:35 |   GP>    4  HLZ-04   Highly suitable    99.1   0.3d  250 / -0.4 deg        18T VR 45903 31227     None - all criteria well within limits
+14:05:35 |   GP>    5  HLZ-05   Highly suitable    99.1   0.3d  250 / -0.4 deg        18T VR 45922 31151     None - all criteria well within limits
+14:05:35 |   GP>    6  HLZ-06   Highly suitable    99.1   0.3d  250 / -0.4 deg        18T VR 45906 31066     None - all criteria well within limits
+14:05:35 |   GP>    7  HLZ-07   Highly suitable    99.1   0.3d  250 / -0.4 deg        18T VR 45946 31107     None - all criteria well within limits
+14:05:35 |   GP>    8  HLZ-08   Highly suitable    99.1   0.3d  240 / -0.4 deg        18T VR 45970 31063     None - all criteria well within limits
+14:05:35 |   GP>    9  HLZ-09   Highly suitable    99.1   0.3d  240 / -0.4 deg        18T VR 46030 30941     None - all criteria well within limits
+14:05:35 |   GP>   10  HLZ-10   Highly suitable    99.1   0.3d  250 / -0.4 deg        18T VR 45906 31316     None - all criteria well within limits
+14:05:35 |   GP>   11  HLZ-11   Highly suitable    99.1   0.3d  240 / -0.4 deg        18T VR 45987 31146     None - all criteria well within limits
+14:05:35 |   GP>   12  HLZ-12   Highly suitable    99.1   0.3d  240 / -0.4 deg        18T VR 46079 30968     None - all criteria well within limits
+14:05:35 |   GP>   13  HLZ-13   Highly suitable    99.1   0.3d  240 / -0.4 deg        18T VR 46005 31018     None - all criteria well within limits
+14:05:35 |   GP>   14  HLZ-14   Highly suitable    99.1   0.3d  240 / -0.4 deg        18T VR 46011 31102     None - all criteria well within limits
+14:05:35 |   GP>   15  HLZ-15   Highly suitable    99.1   0.3d  240 / -0.4 deg        18T VR 46035 31058     None - all criteria well within limits
+14:05:35 |   GP> ... 51 more candidates in the CSV / HTML report
+14:05:35 |   GP> ====================================================================================================
+14:05:35 |   GP> Geodatabase : C:\Users\Son\AppData\Local\Temp\hlz_smoke_v067_2iwhwufv\outputs\D_many_tiles_aoi\HLZ_Results.gdb
+14:05:35 |   GP> HTML report : C:\Users\Son\AppData\Local\Temp\hlz_smoke_v067_2iwhwufv\outputs\D_many_tiles_aoi\HLZ_Report.html
+14:05:35 |   GP> CSV table   : C:\Users\Son\AppData\Local\Temp\hlz_smoke_v067_2iwhwufv\outputs\D_many_tiles_aoi\HLZ_Candidates.csv
+14:05:35 |   GP> Run log     : C:\Users\Son\AppData\Local\Temp\hlz_smoke_v067_2iwhwufv\outputs\D_many_tiles_aoi\hlz_run.log
+14:05:35 |   GP> Planning aid only: confirm every site by ground/aerial reconnaissance and with the operator's performance data.
+14:05:35 |   GP> Succeeded at October 7, 2026 2:05:35 PM (Elapsed Time: 2 minutes 0 seconds)
+14:05:35 | scenario D_many_tiles_aoi finished in 121.5 s
+14:05:35 | PASS D_many_tiles_aoi: tool ran without error
+14:05:35 | PASS D_many_tiles_aoi: HLZ_Footprints exists
+14:05:35 | PASS D_many_tiles_aoi: HLZ_Best_Approach exists
+14:05:35 | PASS D_many_tiles_aoi: HLZ_Approach_Sectors exists
+14:05:36 | PASS D_many_tiles_aoi: Ground_Class exists
+14:05:36 | PASS D_many_tiles_aoi: Slope_deg exists
+14:05:36 | PASS D_many_tiles_aoi: footprints count = 66
+14:05:36 |   fields: ['OBJECTID', 'Shape', 'Shape_Length', 'Shape_Area', 'Rank', 'HLZ_ID', 'Rating', 'Score', 'Status', 'Confidence', 'MGRS', 'Latitude', 'Longitude', 'Elev_m', 'Slope_deg', 'Aspect_deg', 'Upslope_Only', 'Rough_m', 'Obst_TDP_m', 'Obst_Ring_m', 'Excl_Dist_m', 'Obst_Dist_m', 'Obst_Name', 'Dist_Ctr_m', 'Brg_Ctr', 'Appr_From', 'Land_Hdg', 'Appr_Angle', 'Clear_Sect', 'Assess_Sect', 'Opposing', 'Appr_Basis', 'DA_ft', 'Limiting', 'Notes']
+14:05:36 | PASS D_many_tiles_aoi: key fields present
+14:05:36 |   top: (1, 'HLZ-01', 'Highly suitable', 99.1, '18T VR 45906 30941', 45.4299027, -75.6915235)
+14:05:36 |   top: (2, 'HLZ-02', 'Highly suitable', 99.1, '18T VR 45906 31016', 45.4305777, -75.6915317)
+14:05:36 |   top: (3, 'HLZ-03', 'Highly suitable', 99.1, '18T VR 45978 30914', 45.4296652, -75.6906002)
+14:05:36 |   top: (4, 'HLZ-04', 'Highly suitable', 99.1, '18T VR 45903 31227', 45.4324766, -75.6915933)
+14:05:36 |   top: (5, 'HLZ-05', 'Highly suitable', 99.1, '18T VR 45922 31151', 45.431794, -75.6913421)
+14:05:36 |   ratings present: ['Highly suitable', 'Suitable']
+14:05:36 | PASS D_many_tiles_aoi: every candidate has an MGRS
+14:05:36 | PASS D_many_tiles_aoi: lat/long near Ottawa
+14:05:36 | PASS D_many_tiles_aoi: CSV header first
+14:05:36 | PASS D_many_tiles_aoi: HTML report written
+14:05:36 | PASS D_many_tiles_aoi: NoData hole masked (valid cells 359,039, expected 359,039)
+14:05:36 |   tiles: 4 | seam duplicates removed: 8
+14:05:36 | PASS D_many_tiles_aoi: processed in 4 tiles
+14:05:36 |   Ground_Class raster 600 x 600
+14:05:36 | PASS D_many_tiles_aoi: Ground_Class covers the AOI only
+14:05:36 |   run-log> 2026-10-07 14:03:36 | WARNING | No exclusion layer: water, wetlands and other unsuitable surfaces are NOT excluded, so a lake can appear as a perfect landing zone. Add a water polygon layer and check candidates on imagery
+14:05:36 |   run-log> 2026-10-07 14:03:36 | WARNING | OAT given but the aircraft profile has no hover ceilings: density altitude is reported but not used to reject sites
+14:05:36 | --- scenario E_many_tiles_whole_dtm ---
+14:09:24 |   GP> Start Time: October 7, 2026 2:05:37 PM
+14:09:24 |   GP> HLZ Suitability Tool v0.7.0 | run folder: C:\Users\Son\AppData\Local\Temp\hlz_smoke_v067_2iwhwufv\outputs\E_many_tiles_whole_dtm
+14:09:24 |   GP> Aircraft: Generic medium rotary-wing | Mission: General HLZ screening | Doctrine: Generic planning thresholds
+14:09:24 |   GP> Analysis area 2,400 x 2,400 cells at 1.000 m (5.8 km2) in 36 tile(s) of up to 443 x 443 cells; estimated roughly 12 s-29 s
+14:09:24 |   GP> No exclusion layer: water, wetlands and other unsuitable surfaces are NOT excluded, so a lake can appear as a perfect landing zone. Add a water polygon layer and check candidates on imagery
+14:09:24 |   GP> No obstacle list: towers, masts and wires are checked only if the DSM captured them, and lidar often misses thin structures. Add an Obstacles layer or file for a safer result
+14:09:24 |   GP> OAT given but the aircraft profile has no hover ceilings: density altitude is reported but not used to reject sites
+14:09:24 |   GP> Tile 1/36: 50 candidate(s), about 46 s left
+14:09:24 |   GP> Tile 2/36: 54 candidate(s), about 47 s left
+14:09:24 |   GP> Tile 3/36: 55 candidate(s), about 46 s left
+14:09:24 |   GP> Tile 4/36: 56 candidate(s), about 46 s left
+14:09:24 |   GP> Tile 5/36: 54 candidate(s), about 45 s left
+14:09:24 |   GP> Tile 6/36: 50 candidate(s), about 43 s left
+14:09:24 |   GP> Tile 7/36: 56 candidate(s), about 42 s left
+14:09:24 |   GP> Tile 8/36: 62 candidate(s), about 41 s left
+14:09:24 |   GP> Tile 9/36: 60 candidate(s), about 40 s left
+14:09:24 |   GP> Tile 10/36: 62 candidate(s), about 39 s left
+14:09:24 |   GP> Tile 11/36: 62 candidate(s), about 38 s left
+14:09:24 |   GP> Tile 12/36: 57 candidate(s), about 36 s left
+14:09:24 |   GP> Tile 13/36: 57 candidate(s), about 36 s left
+14:09:24 |   GP> Tile 14/36: 62 candidate(s), about 36 s left
+14:09:24 |   GP> Tile 15/36: 42 candidate(s), about 34 s left
+14:09:24 |   GP> Tile 16/36: 40 candidate(s), about 33 s left
+14:09:24 |   GP> Tile 17/36: 62 candidate(s), about 32 s left
+14:09:24 |   GP> Tile 18/36: 56 candidate(s), about 31 s left
+14:09:24 |   GP> Tile 19/36: 57 candidate(s), about 29 s left
+14:09:24 |   GP> Tile 20/36: 61 candidate(s), about 28 s left
+14:09:24 |   GP> Tile 21/36: 53 candidate(s), about 26 s left
+14:09:24 |   GP> Tile 22/36: 31 candidate(s), about 25 s left
+14:09:24 |   GP> Tile 23/36: 35 candidate(s), about 23 s left
+14:09:24 |   GP> Tile 24/36: 31 candidate(s), about 21 s left
+14:09:24 |   GP> Tile 25/36: 57 candidate(s), about 20 s left
+14:09:24 |   GP> Tile 26/36: 60 candidate(s), about 18 s left
+14:09:24 |   GP> Tile 27/36: 62 candidate(s), about 16 s left
+14:09:24 |   GP> Tile 28/36: 62 candidate(s), about 15 s left
+14:09:24 |   GP> Tile 29/36: 61 candidate(s), about 13 s left
+14:09:24 |   GP> Tile 30/36: 57 candidate(s), about 11 s left
+14:09:24 |   GP> Tile 31/36: 54 candidate(s), about 9 s left
+14:09:24 |   GP> Tile 32/36: 59 candidate(s), about 7 s left
+14:09:24 |   GP> Tile 33/36: 60 candidate(s), about 6 s left
+14:09:24 |   GP> Tile 34/36: 59 candidate(s), about 4 s left
+14:09:24 |   GP> Tile 35/36: 59 candidate(s), about 2 s left
+14:09:24 |   GP> Tile 36/36: 54 candidate(s)
+14:09:24 |   GP> 39% of approach sectors lack data. Provide DTM/DSM coverage extending 1,000 m beyond the area, or use a profile with a shorter approach_range_m; affected candidates are rated 'Unassessed'
+14:09:24 |   GP> 1,675 candidates found; keeping the best 1,000 (raise 'Maximum number of candidates' to keep more)
+14:09:24 |   GP> Candidates: 1,000 after removing 294 tile-seam duplicates (exact checks 1,996, rejected 27)
+14:09:24 |   GP> Finalising rasters...
+14:09:24 |   GP> Mosaicking 36 tile(s) into Ground_Class
+14:09:24 |   GP> Mosaicking 36 tile(s) into Slope_deg
+14:09:24 |   GP> Mosaicking 36 tile(s) into Roughness_m
+14:09:24 |   GP> Mosaicking 36 tile(s) into Obstacle_Height_m
+14:09:24 |   GP> Writing vector layers...
+14:09:24 |   GP> Run completed in 3.7 min
+14:09:24 |   GP>  
+14:09:24 |   GP> ====================================================================================================
+14:09:24 |   GP> RESULTS - 1000 candidates (best first)
+14:09:24 |   GP> Rank  HLZ_ID   Rating            Score  Slope  Approach(from/angle)  MGRS                   Main limiting factor
+14:09:24 |   GP> ----  -------  ----------------  -----  -----  --------------------  ---------------------  --------------------
+14:09:24 |   GP>    1  HLZ-0001  Highly suitable    99.1   0.3d  270 / -1.7 deg        18T VR 46575 31045     None - all criteria well within limits
+14:09:24 |   GP>    2  HLZ-0002  Highly suitable    99.1   0.3d  270 / -1.4 deg        18T VR 46593 30998     None - all criteria well within limits
+14:09:24 |   GP>    3  HLZ-0003  Highly suitable    99.1   0.3d  270 / -2.3 deg        18T VR 46553 30968     None - all criteria well within limits
+14:09:24 |   GP>    4  HLZ-0004  Highly suitable    99.1   0.3d  190 / -2.3 deg        18T VR 46599 30948     None - all criteria well within limits
+14:09:24 |   GP>    5  HLZ-0005  Highly suitable    99.1   0.3d  240 / -2.5 deg        18T VR 46535 31015     None - all criteria well within limits
+14:09:24 |   GP>    6  HLZ-0006  Highly suitable    99.1   0.3d  250 / -0.4 deg        18T VR 45826 31593     None - all criteria well within limits
+14:09:24 |   GP>    7  HLZ-0007  Highly suitable    99.1   0.3d  250 / -0.4 deg        18T VR 45806 31391     None - all criteria well within limits
+14:09:24 |   GP>    8  HLZ-0008  Highly suitable    99.1   0.3d  250 / -0.4 deg        18T VR 45793 31278     None - all criteria well within limits
+14:09:24 |   GP>    9  HLZ-0009  Highly suitable    99.1   0.3d  250 / -0.4 deg        18T VR 45889 31593     None - all criteria well within limits
+14:09:24 |   GP>   10  HLZ-0010  Highly suitable    99.1   0.3d  250 / -0.4 deg        18T VR 45850 31549     None - all criteria well within limits
+14:09:24 |   GP>   11  HLZ-0011  Highly suitable    99.1   0.3d  250 / -0.4 deg        18T VR 45806 31516     None - all criteria well within limits
+14:09:24 |   GP>   12  HLZ-0012  Highly suitable    99.1   0.3d  250 / -0.4 deg        18T VR 45828 31471     None - all criteria well within limits
+14:09:24 |   GP>   13  HLZ-0013  Highly suitable    99.1   0.3d  250 / -0.4 deg        18T VR 45828 31346     None - all criteria well within limits
+14:09:24 |   GP>   14  HLZ-0014  Highly suitable    99.1   0.3d  250 / -0.4 deg        18T VR 45796 31203     None - all criteria well within limits
+14:09:24 |   GP>   15  HLZ-0015  Highly suitable    99.1   0.3d  250 / -0.4 deg        18T VR 45802 30803     None - all criteria well within limits
+14:09:24 |   GP> ... 985 more candidates in the CSV / HTML report
+14:09:24 |   GP> ====================================================================================================
+14:09:24 |   GP> Geodatabase : C:\Users\Son\AppData\Local\Temp\hlz_smoke_v067_2iwhwufv\outputs\E_many_tiles_whole_dtm\HLZ_Results.gdb
+14:09:24 |   GP> HTML report : C:\Users\Son\AppData\Local\Temp\hlz_smoke_v067_2iwhwufv\outputs\E_many_tiles_whole_dtm\HLZ_Report.html
+14:09:24 |   GP> CSV table   : C:\Users\Son\AppData\Local\Temp\hlz_smoke_v067_2iwhwufv\outputs\E_many_tiles_whole_dtm\HLZ_Candidates.csv
+14:09:24 |   GP> Run log     : C:\Users\Son\AppData\Local\Temp\hlz_smoke_v067_2iwhwufv\outputs\E_many_tiles_whole_dtm\hlz_run.log
+14:09:24 |   GP> Planning aid only: confirm every site by ground/aerial reconnaissance and with the operator's performance data.
+14:09:24 |   GP> Succeeded at October 7, 2026 2:09:24 PM (Elapsed Time: 3 minutes 47 seconds)
+14:09:24 | scenario E_many_tiles_whole_dtm finished in 228.2 s
+14:09:24 | PASS E_many_tiles_whole_dtm: tool ran without error
+14:09:25 | PASS E_many_tiles_whole_dtm: HLZ_Footprints exists
+14:09:25 | PASS E_many_tiles_whole_dtm: HLZ_Best_Approach exists
+14:09:25 | PASS E_many_tiles_whole_dtm: HLZ_Approach_Sectors exists
+14:09:25 | PASS E_many_tiles_whole_dtm: Ground_Class exists
+14:09:25 | PASS E_many_tiles_whole_dtm: Slope_deg exists
+14:09:26 | PASS E_many_tiles_whole_dtm: footprints count = 1000
+14:09:26 |   fields: ['OBJECTID', 'Shape', 'Shape_Length', 'Shape_Area', 'Rank', 'HLZ_ID', 'Rating', 'Score', 'Status', 'Confidence', 'MGRS', 'Latitude', 'Longitude', 'Elev_m', 'Slope_deg', 'Aspect_deg', 'Upslope_Only', 'Rough_m', 'Obst_TDP_m', 'Obst_Ring_m', 'Excl_Dist_m', 'Obst_Dist_m', 'Obst_Name', 'Dist_Ctr_m', 'Brg_Ctr', 'Appr_From', 'Land_Hdg', 'Appr_Angle', 'Clear_Sect', 'Assess_Sect', 'Opposing', 'Appr_Basis', 'DA_ft', 'Limiting', 'Notes']
+14:09:26 | PASS E_many_tiles_whole_dtm: key fields present
+14:09:26 |   top: (1, 'HLZ-0001', 'Highly suitable', 99.1, '18T VR 46575 31045', 45.4308902, -75.682983)
+14:09:26 |   top: (2, 'HLZ-0002', 'Highly suitable', 99.1, '18T VR 46593 30998', 45.4304685, -75.6827478)
+14:09:26 |   top: (3, 'HLZ-0003', 'Highly suitable', 99.1, '18T VR 46553 30968', 45.4301955, -75.6832559)
+14:09:26 |   top: (4, 'HLZ-0004', 'Highly suitable', 99.1, '18T VR 46599 30948', 45.430019, -75.6826657)
+14:09:26 |   top: (5, 'HLZ-0005', 'Highly suitable', 99.1, '18T VR 46535 31015', 45.4306171, -75.6834911)
+14:09:26 |   ratings present: ['Highly suitable']
+14:09:26 | PASS E_many_tiles_whole_dtm: every candidate has an MGRS
+14:09:26 | PASS E_many_tiles_whole_dtm: lat/long near Ottawa
+14:09:26 | PASS E_many_tiles_whole_dtm: CSV header first
+14:09:26 | PASS E_many_tiles_whole_dtm: HTML report written
+14:09:26 | PASS E_many_tiles_whole_dtm: NoData hole masked (valid cells 5,759,039, expected 5,759,039)
+14:09:26 |   tiles: 36 | seam duplicates removed: 294
+14:09:26 | PASS E_many_tiles_whole_dtm: processed in 36 tiles
+14:09:27 |   Ground_Class raster 2400 x 2400
+14:09:27 | PASS E_many_tiles_whole_dtm: Ground_Class mosaicked over the whole DTM
+14:09:27 |   run-log> 2026-10-07 14:05:39 | WARNING | No exclusion layer: water, wetlands and other unsuitable surfaces are NOT excluded, so a lake can appear as a perfect landing zone. Add a water polygon layer and check candidates on imagery
+14:09:27 |   run-log> 2026-10-07 14:05:39 | WARNING | OAT given but the aircraft profile has no hover ceilings: density altitude is reported but not used to reject sites
+14:09:27 |   run-log> 2026-10-07 14:06:46 | WARNING | 39% of approach sectors lack data. Provide DTM/DSM coverage extending 1,000 m beyond the area, or use a profile with a shorter approach_range_m; affected candidates are rated 'Unassessed'
+14:09:27 |   run-log> 2026-10-07 14:06:46 | WARNING | 1,675 candidates found; keeping the best 1,000 (raise 'Maximum number of candidates' to keep more)
+14:09:27 | --- scenario F_lake_excluded ---
+14:11:53 |   GP> Start Time: October 7, 2026 2:09:28 PM
+14:11:53 |   GP> HLZ Suitability Tool v0.7.0 | run folder: C:\Users\Son\AppData\Local\Temp\hlz_smoke_v067_2iwhwufv\outputs\F_lake_excluded
+14:11:53 |   GP> Aircraft: Generic medium rotary-wing | Mission: General HLZ screening | Doctrine: Generic planning thresholds
+14:11:53 |   GP> Analysis area 600 x 600 cells at 1.000 m (0.4 km2) in 1 tile(s) of up to 3,896 x 3,896 cells; estimated roughly 1 s-2 s
+14:11:53 |   GP> Exclusion areas applied: C:\Users\Son\AppData\Local\Temp\hlz_smoke_v067_2iwhwufv\inputs.gdb\lake (1 features)
+14:11:53 |   GP> No obstacle list: towers, masts and wires are checked only if the DSM captured them, and lidar often misses thin structures. Add an Obstacles layer or file for a safer result
+14:11:53 |   GP> OAT given but the aircraft profile has no hover ceilings: density altitude is reported but not used to reject sites
+14:11:53 |   GP> Tile 1/1: 60 candidate(s)
+14:11:53 |   GP> Candidates: 60 after removing 0 tile-seam duplicates (exact checks 63, rejected 3)
+14:11:53 |   GP> Finalising rasters...
+14:11:53 |   GP> Mosaicking 1 tile(s) into Ground_Class
+14:11:53 |   GP> Mosaicking 1 tile(s) into Slope_deg
+14:11:53 |   GP> Mosaicking 1 tile(s) into Roughness_m
+14:11:53 |   GP> Mosaicking 1 tile(s) into Obstacle_Height_m
+14:11:53 |   GP> Writing vector layers...
+14:11:53 |   GP> Run completed in 2.4 min
+14:11:53 |   GP>  
+14:11:53 |   GP> ====================================================================================================
+14:11:53 |   GP> RESULTS - 60 candidates (best first)
+14:11:53 |   GP> Rank  HLZ_ID   Rating            Score  Slope  Approach(from/angle)  MGRS                   Main limiting factor
+14:11:53 |   GP> ----  -------  ----------------  -----  -----  --------------------  ---------------------  --------------------
+14:11:53 |   GP>    1  HLZ-01   Highly suitable    99.1   0.3d  250 / -0.4 deg        18T VR 45906 30941     None - all criteria well within limits
+14:11:53 |   GP>    2  HLZ-02   Highly suitable    99.1   0.3d  250 / -0.4 deg        18T VR 45906 31016     None - all criteria well within limits
+14:11:53 |   GP>    3  HLZ-03   Highly suitable    99.1   0.3d  240 / -0.4 deg        18T VR 45978 30914     None - all criteria well within limits
+14:11:53 |   GP>    4  HLZ-04   Highly suitable    99.1   0.3d  250 / -0.4 deg        18T VR 45903 31227     None - all criteria well within limits
+14:11:53 |   GP>    5  HLZ-05   Highly suitable    99.1   0.3d  250 / -0.4 deg        18T VR 45922 31151     None - all criteria well within limits
+14:11:53 |   GP>    6  HLZ-06   Highly suitable    99.1   0.3d  250 / -0.4 deg        18T VR 45906 31066     None - all criteria well within limits
+14:11:53 |   GP>    7  HLZ-07   Highly suitable    99.1   0.3d  250 / -0.4 deg        18T VR 45946 31107     None - all criteria well within limits
+14:11:53 |   GP>    8  HLZ-08   Highly suitable    99.1   0.3d  240 / -0.4 deg        18T VR 45970 31063     None - all criteria well within limits
+14:11:53 |   GP>    9  HLZ-09   Highly suitable    99.1   0.3d  240 / -0.4 deg        18T VR 46030 30941     None - all criteria well within limits
+14:11:53 |   GP>   10  HLZ-10   Highly suitable    99.1   0.3d  250 / -0.4 deg        18T VR 45906 31316     None - all criteria well within limits
+14:11:53 |   GP>   11  HLZ-11   Highly suitable    99.1   0.3d  240 / -0.4 deg        18T VR 45987 31146     None - all criteria well within limits
+14:11:53 |   GP>   12  HLZ-12   Highly suitable    99.1   0.3d  240 / -0.4 deg        18T VR 46079 30968     None - all criteria well within limits
+14:11:53 |   GP>   13  HLZ-13   Highly suitable    99.1   0.3d  240 / -0.4 deg        18T VR 46005 31018     None - all criteria well within limits
+14:11:53 |   GP>   14  HLZ-14   Highly suitable    99.1   0.3d  240 / -0.4 deg        18T VR 46011 31102     None - all criteria well within limits
+14:11:53 |   GP>   15  HLZ-15   Highly suitable    99.1   0.3d  240 / -0.4 deg        18T VR 46035 31058     None - all criteria well within limits
+14:11:53 |   GP> ... 45 more candidates in the CSV / HTML report
+14:11:53 |   GP> ====================================================================================================
+14:11:53 |   GP> Geodatabase : C:\Users\Son\AppData\Local\Temp\hlz_smoke_v067_2iwhwufv\outputs\F_lake_excluded\HLZ_Results.gdb
+14:11:53 |   GP> HTML report : C:\Users\Son\AppData\Local\Temp\hlz_smoke_v067_2iwhwufv\outputs\F_lake_excluded\HLZ_Report.html
+14:11:53 |   GP> CSV table   : C:\Users\Son\AppData\Local\Temp\hlz_smoke_v067_2iwhwufv\outputs\F_lake_excluded\HLZ_Candidates.csv
+14:11:53 |   GP> Run log     : C:\Users\Son\AppData\Local\Temp\hlz_smoke_v067_2iwhwufv\outputs\F_lake_excluded\hlz_run.log
+14:11:53 |   GP> Planning aid only: confirm every site by ground/aerial reconnaissance and with the operator's performance data.
+14:11:53 |   GP> Succeeded at October 7, 2026 2:11:53 PM (Elapsed Time: 2 minutes 25 seconds)
+14:11:53 | scenario F_lake_excluded finished in 146.3 s
+14:11:53 | PASS F_lake_excluded: tool ran without error
+14:11:53 | PASS F_lake_excluded: HLZ_Footprints exists
+14:11:53 | PASS F_lake_excluded: HLZ_Best_Approach exists
+14:11:54 | PASS F_lake_excluded: HLZ_Approach_Sectors exists
+14:11:54 | PASS F_lake_excluded: Ground_Class exists
+14:11:54 | PASS F_lake_excluded: Slope_deg exists
+14:11:54 | PASS F_lake_excluded: footprints count = 60
+14:11:55 | PASS F_lake_excluded: no touchdown point touches the lake (nearest centre 29.5 m, needs 25 m)
+14:11:55 |   fields: ['OBJECTID', 'Shape', 'Shape_Length', 'Shape_Area', 'Rank', 'HLZ_ID', 'Rating', 'Score', 'Status', 'Confidence', 'MGRS', 'Latitude', 'Longitude', 'Elev_m', 'Slope_deg', 'Aspect_deg', 'Upslope_Only', 'Rough_m', 'Obst_TDP_m', 'Obst_Ring_m', 'Excl_Dist_m', 'Obst_Dist_m', 'Obst_Name', 'Dist_Ctr_m', 'Brg_Ctr', 'Appr_From', 'Land_Hdg', 'Appr_Angle', 'Clear_Sect', 'Assess_Sect', 'Opposing', 'Appr_Basis', 'DA_ft', 'Limiting', 'Notes']
+14:11:55 | PASS F_lake_excluded: key fields present
+14:11:55 |   top: (1, 'HLZ-01', 'Highly suitable', 99.1, '18T VR 45906 30941', 45.4299027, -75.6915235)
+14:11:55 |   top: (2, 'HLZ-02', 'Highly suitable', 99.1, '18T VR 45906 31016', 45.4305777, -75.6915317)
+14:11:55 |   top: (3, 'HLZ-03', 'Highly suitable', 99.1, '18T VR 45978 30914', 45.4296652, -75.6906002)
+14:11:55 |   top: (4, 'HLZ-04', 'Highly suitable', 99.1, '18T VR 45903 31227', 45.4324766, -75.6915933)
+14:11:55 |   top: (5, 'HLZ-05', 'Highly suitable', 99.1, '18T VR 45922 31151', 45.431794, -75.6913421)
+14:11:55 |   ratings present: ['Highly suitable', 'Suitable']
+14:11:55 | PASS F_lake_excluded: every candidate has an MGRS
+14:11:55 | PASS F_lake_excluded: lat/long near Ottawa
+14:11:55 | PASS F_lake_excluded: CSV header first
+14:11:55 | PASS F_lake_excluded: HTML report written
+14:11:55 | PASS F_lake_excluded: NoData hole masked (valid cells 359,039, expected 359,039)
+14:11:55 |   tiles: 1 | seam duplicates removed: 0
+14:11:56 |   Ground_Class raster 600 x 600
+14:11:56 | PASS F_lake_excluded: Ground_Class covers the AOI only
+14:11:56 |   run-log> 2026-10-07 14:09:31 | WARNING | OAT given but the aircraft profile has no hover ceilings: density altitude is reported but not used to reject sites
+14:11:56 | --- scenario G_point_and_radius ---
+14:14:21 |   GP> Start Time: October 7, 2026 2:11:56 PM
+14:14:21 |   GP> HLZ Suitability Tool v0.7.0 | run folder: C:\Users\Son\AppData\Local\Temp\hlz_smoke_v067_2iwhwufv\outputs\G_point_and_radius
+14:14:21 |   GP> Aircraft: Generic medium rotary-wing | Mission: General HLZ screening | Doctrine: Generic planning thresholds
+14:14:21 |   GP> Searching within 150 m of 1 centre point(s)
+14:14:21 |   GP> Analysis area 301 x 301 cells at 1.000 m (0.1 km2) in 1 tile(s) of up to 443 x 443 cells; estimated roughly 0 s-0 s
+14:14:21 |   GP> Search area: radius 150 m around 1 point; landing zones are placed only inside it
+14:14:21 |   GP> No exclusion layer: water, wetlands and other unsuitable surfaces are NOT excluded, so a lake can appear as a perfect landing zone. Add a water polygon layer and check candidates on imagery
+14:14:21 |   GP> No obstacle list: towers, masts and wires are checked only if the DSM captured them, and lidar often misses thin structures. Add an Obstacles layer or file for a safer result
+14:14:21 |   GP> OAT given but the aircraft profile has no hover ceilings: density altitude is reported but not used to reject sites
+14:14:21 |   GP> Tile 1/1: 10 candidate(s)
+14:14:21 |   GP> Candidates: 10 after removing 0 tile-seam duplicates (exact checks 11, rejected 1)
+14:14:21 |   GP> Finalising rasters...
+14:14:21 |   GP> Mosaicking 1 tile(s) into Ground_Class
+14:14:21 |   GP> Mosaicking 1 tile(s) into Slope_deg
+14:14:21 |   GP> Mosaicking 1 tile(s) into Roughness_m
+14:14:21 |   GP> Mosaicking 1 tile(s) into Obstacle_Height_m
+14:14:21 |   GP> Writing vector layers...
+14:14:21 |   GP> Run completed in 2.4 min
+14:14:21 |   GP>  
+14:14:21 |   GP> ====================================================================================================
+14:14:21 |   GP> RESULTS - 10 candidates (best first)
+14:14:21 |   GP> Rank  HLZ_ID   Rating            Score  Slope  Approach(from/angle)  MGRS                   Main limiting factor
+14:14:21 |   GP> ----  -------  ----------------  -----  -----  --------------------  ---------------------  --------------------
+14:14:21 |   GP>    1  HLZ-01   Highly suitable    99.1   0.3d  240 / -0.4 deg        18T VR 46060 31146     None - all criteria well within limits
+14:14:21 |   GP>    2  HLZ-02   Highly suitable    99.1   0.3d  240 / -0.4 deg        18T VR 46100 31116     None - all criteria well within limits
+14:14:21 |   GP>    3  HLZ-03   Highly suitable    99.1   0.3d  240 / -0.4 deg        18T VR 46123 31071     None - all criteria well within limits
+14:14:21 |   GP>    4  HLZ-04   Highly suitable    99.1   0.3d  240 / -0.4 deg        18T VR 46115 31164     None - all criteria well within limits
+14:14:21 |   GP>    5  HLZ-05   Highly suitable    99.1   0.3d  240 / -0.4 deg        18T VR 46061 31256     None - all criteria well within limits
+14:14:21 |   GP>    6  HLZ-06   Highly suitable    99.1   0.3d  240 / -0.4 deg        18T VR 46095 31306     None - all criteria well within limits
+14:14:21 |   GP>    7  HLZ-07   Highly suitable    99.1   0.3d  240 / -0.4 deg        18T VR 46111 31258     None - all criteria well within limits
+14:14:21 |   GP>    8  HLZ-08   Highly suitable    94.1   0.3d  070 / 0.5 deg         18T VR 46310 31188     Best approach obstacle angle 0.5 deg (clear <= 3 deg)
+14:14:21 |   GP>    9  HLZ-09   Highly suitable    86.0   0.5d  080 / 1.7 deg         18T VR 46310 31238     Surface roughness 0.10 m (limit 0.30 m)
+14:14:21 |   GP>   10  HLZ-10   Suitable           71.9   1.1d  350 / 0.4 deg         18T VR 46286 31282     Surface roughness 0.29 m (limit 0.30 m)
+14:14:21 |   GP> ====================================================================================================
+14:14:21 |   GP> Geodatabase : C:\Users\Son\AppData\Local\Temp\hlz_smoke_v067_2iwhwufv\outputs\G_point_and_radius\HLZ_Results.gdb
+14:14:21 |   GP> HTML report : C:\Users\Son\AppData\Local\Temp\hlz_smoke_v067_2iwhwufv\outputs\G_point_and_radius\HLZ_Report.html
+14:14:21 |   GP> CSV table   : C:\Users\Son\AppData\Local\Temp\hlz_smoke_v067_2iwhwufv\outputs\G_point_and_radius\HLZ_Candidates.csv
+14:14:21 |   GP> Run log     : C:\Users\Son\AppData\Local\Temp\hlz_smoke_v067_2iwhwufv\outputs\G_point_and_radius\hlz_run.log
+14:14:21 |   GP> Planning aid only: confirm every site by ground/aerial reconnaissance and with the operator's performance data.
+14:14:21 |   GP> Succeeded at October 7, 2026 2:14:21 PM (Elapsed Time: 2 minutes 24 seconds)
+14:14:21 | scenario G_point_and_radius finished in 145.6 s
+14:14:21 | PASS G_point_and_radius: tool ran without error
+14:14:21 | PASS G_point_and_radius: HLZ_Footprints exists
+14:14:21 | PASS G_point_and_radius: HLZ_Best_Approach exists
+14:14:22 | PASS G_point_and_radius: HLZ_Approach_Sectors exists
+14:14:22 | PASS G_point_and_radius: Ground_Class exists
+14:14:22 | PASS G_point_and_radius: Slope_deg exists
+14:14:22 | PASS G_point_and_radius: footprints count = 10
+14:14:23 | PASS G_point_and_radius: every candidate lies within the 150 m search radius (farthest 149.6 m)
+14:14:23 | PASS G_point_and_radius: the distance from the centre is stored
+14:14:23 | PASS G_point_and_radius: the HLZ_Search_Area layer is written
+14:14:23 |   fields: ['OBJECTID', 'Shape', 'Shape_Length', 'Shape_Area', 'Rank', 'HLZ_ID', 'Rating', 'Score', 'Status', 'Confidence', 'MGRS', 'Latitude', 'Longitude', 'Elev_m', 'Slope_deg', 'Aspect_deg', 'Upslope_Only', 'Rough_m', 'Obst_TDP_m', 'Obst_Ring_m', 'Excl_Dist_m', 'Obst_Dist_m', 'Obst_Name', 'Dist_Ctr_m', 'Brg_Ctr', 'Appr_From', 'Land_Hdg', 'Appr_Angle', 'Clear_Sect', 'Assess_Sect', 'Opposing', 'Appr_Basis', 'DA_ft', 'Limiting', 'Notes']
+14:14:23 | PASS G_point_and_radius: key fields present
+14:14:23 |   top: (1, 'HLZ-01', 'Highly suitable', 99.1, '18T VR 46060 31146', 45.4317597, -75.6895774)
+14:14:23 |   top: (2, 'HLZ-02', 'Highly suitable', 99.1, '18T VR 46100 31116', 45.4314928, -75.6890628)
+14:14:23 |   top: (3, 'HLZ-03', 'Highly suitable', 99.1, '18T VR 46123 31071', 45.4310895, -75.6887638)
+14:14:23 |   top: (4, 'HLZ-04', 'Highly suitable', 99.1, '18T VR 46115 31164', 45.4319259, -75.6888763)
+14:14:23 |   top: (5, 'HLZ-05', 'Highly suitable', 99.1, '18T VR 46061 31256', 45.4327498, -75.6895767)
+14:14:23 |   ratings present: ['Highly suitable', 'Suitable']
+14:14:23 | PASS G_point_and_radius: every candidate has an MGRS
+14:14:23 | PASS G_point_and_radius: lat/long near Ottawa
+14:14:23 | PASS G_point_and_radius: CSV header first
+14:14:23 | PASS G_point_and_radius: HTML report written
+14:14:23 | PASS G_point_and_radius: NoData hole masked (valid cells 90,601, expected 90,601)
+14:14:23 |   tiles: 1 | seam duplicates removed: 0
+14:14:24 |   Ground_Class raster 301 x 301
+14:14:24 | PASS G_point_and_radius: Ground_Class covers the AOI only
+14:14:24 |   run-log> 2026-10-07 14:11:59 | WARNING | No exclusion layer: water, wetlands and other unsuitable surfaces are NOT excluded, so a lake can appear as a perfect landing zone. Add a water polygon layer and check candidates on imagery
+14:14:24 |   run-log> 2026-10-07 14:11:59 | WARNING | OAT given but the aircraft profile has no hover ceilings: density altitude is reported but not used to reject sites
+14:14:24 | --- scenario H_data_folder ---
+14:14:24 |   GP> Start Time: October 7, 2026 2:14:24 PM
+14:14:24 |   GP> ====================================================================================================
+14:14:24 |   GP> HLZ data folder : C:\Users\Son\AppData\Local\Temp\hlz_smoke_v067_2iwhwufv\data_parent\HLZ_DATA
+14:14:24 |   GP> Created         : ., 01_Elevation\DTM, 01_Elevation\DSM, 01_Elevation\Source_PointCloud, 02_Hydrology, 03_Exclusions, 04_AOI, 05_Search_Centres, 10_Obstacles, 06_Reference, 07_Profiles, 08_Runs, 09_Audit
+14:14:24 |   GP> Findings        : 1 FAIL, 2 WARN, 4 INFO, 1 PASS
+14:14:24 |   GP> ====================================================================================================
+14:14:24 |   GP> [FAIL] 01_Elevation\DTM: No DTM: the DTM folder has no elevation raster. The analysis cannot run.  -> Copy ONE bare-earth elevation raster (for example the HRDEM 'dtm' GeoTIFF) into 01_Elevation\DTM.
+14:14:24 |   GP> [WARN] 01_Elevation\DSM: No DSM: trees, buildings and towers will NOT be detected and every rating is capped at Marginal.  -> Copy the surface model that matches the DTM (for example HRDEM 'dsm') into 01_Elevation\DSM.
+14:14:24 |   GP> [WARN] 02_Hydrology: No water data: lakes, ponds and rivers are NOT excluded and can be rated as excellent landing zones.  -> Copy a water layer (polygons for lakes and wide rivers, lines for streams: Ontario Hydro Network, NRCan NHN, USGS NHD, OpenStreetMap water) into 02_Hydrology.
+14:14:24 |   GP> [INFO] General: Created: ., 01_Elevation\DTM, 01_Elevation\DSM, 01_Elevation\Source_PointCloud, 02_Hydrology, 03_Exclusions, 04_AOI, 05_Search_Centres, 10_Obstacles, 06_Reference, 07_Profiles, 08_Runs, 09_Audit.
+14:14:24 |   GP> [INFO] 03_Exclusions: No other exclusion areas (optional: wetlands, built-up or restricted areas).
+14:14:24 |   GP> [INFO] 04_AOI: No AOI: the analysis uses the current map view, or the whole DTM.  -> Optional: put one area-of-interest polygon in 04_AOI.
+14:14:24 |   GP> [INFO] 10_Obstacles: No obstacle list: towers, masts and wires that the lidar surface model misses are NOT considered, so a glide path can be rated clear when a tower stands in it.  -> Recommended: put an FAA DOF file, an OpenStreetMap GeoJSON, a CSV (latitude, longitude, height) or an obstacle layer in 10_Obstacles.
+14:14:24 |   GP>  
+14:14:24 |   GP> Inputs '1. Analyze HLZ Suitability' will use when you choose this data folder:
+14:14:24 |   GP>   DTM             : -- none --
+14:14:24 |   GP>   DSM             : -- none --
+14:14:24 |   GP>   Exclusion areas : 0 layer(s)
+14:14:24 |   GP>   AOI             : -- none (map view or whole DTM) --
+14:14:24 |   GP>   Output folder   : C:\Users\Son\AppData\Local\Temp\hlz_smoke_v067_2iwhwufv\data_parent\HLZ_DATA\08_Runs
+14:14:24 |   GP>  
+14:14:24 |   GP> Audit report    : C:\Users\Son\AppData\Local\Temp\hlz_smoke_v067_2iwhwufv\data_parent\HLZ_DATA\09_Audit\HLZ_Data_Audit_20261007_141424.html
+14:14:24 |   GP> RESULT: NOT READY - fix the FAIL items first
+14:14:24 |   GP> Succeeded at October 7, 2026 2:14:24 PM (Elapsed Time: 0.10 seconds)
+14:14:24 | PASS H: tool 0 created the data folder and its marker
+14:14:24 | PASS H: an empty data folder is reported NOT READY
+14:14:28 |   audit> [WARN] The DTM ends less than 1,045 m (approach range plus touchdown point and ring) beyond the AOI on the west, east, south, north side(s). Approaches toward there cannot be fully checked; sites near that edge may be Unassessed.
+14:14:28 | PASS H: pure-Python audit status READY_WITH_WARNINGS
+14:14:28 | PASS H: DTM, DSM, water and AOI found in the data folder
+14:14:28 | PASS H: GeoTIFF header reader agrees with ArcGIS (size, cell, extent)
+14:14:28 | PASS H: GeoTIFF CRS read as EPSG:32618
+14:14:28 | PASS H: tool 0 wrote the audit report
+14:16:51 |   GP> Start Time: October 7, 2026 2:14:28 PM
+14:16:51 |   GP> HLZ Suitability Tool v0.7.0 | run folder: C:\Users\Son\AppData\Local\Temp\hlz_smoke_v067_2iwhwufv\data_parent\HLZ_DATA\08_Runs\H_data_folder
+14:16:51 |   GP> Aircraft: Generic medium rotary-wing | Mission: General HLZ screening | Doctrine: Generic planning thresholds
+14:16:51 |   GP> Data folder: C:\Users\Son\AppData\Local\Temp\hlz_smoke_v067_2iwhwufv\data_parent\HLZ_DATA
+14:16:51 |   GP>   DTM: C:\Users\Son\AppData\Local\Temp\hlz_smoke_v067_2iwhwufv\data_parent\HLZ_DATA\01_Elevation\DTM\smoke_dtm.tif
+14:16:51 |   GP>   DSM: C:\Users\Son\AppData\Local\Temp\hlz_smoke_v067_2iwhwufv\data_parent\HLZ_DATA\01_Elevation\DSM\smoke_dsm.tif
+14:16:51 |   GP>   Exclusion layers: 1
+14:16:51 |   GP>   AOI: C:\Users\Son\AppData\Local\Temp\hlz_smoke_v067_2iwhwufv\data_parent\HLZ_DATA\04_AOI\smoke_aoi.shp
+14:16:51 |   GP>   Obstacle sources: 0
+14:16:51 |   GP> Analysis area 600 x 600 cells at 1.000 m (0.4 km2) in 1 tile(s) of up to 3,896 x 3,896 cells; estimated roughly 1 s-2 s
+14:16:51 |   GP> Exclusion areas applied: C:\Users\Son\AppData\Local\Temp\hlz_smoke_v067_2iwhwufv\data_parent\HLZ_DATA\02_Hydrology\lake.shp (1 features)
+14:16:51 |   GP> No obstacle list: towers, masts and wires are checked only if the DSM captured them, and lidar often misses thin structures. Add an Obstacles layer or file for a safer result
+14:16:51 |   GP> OAT given but the aircraft profile has no hover ceilings: density altitude is reported but not used to reject sites
+14:16:51 |   GP> Tile 1/1: 60 candidate(s)
+14:16:51 |   GP> Candidates: 60 after removing 0 tile-seam duplicates (exact checks 63, rejected 3)
+14:16:51 |   GP> Finalising rasters...
+14:16:51 |   GP> Mosaicking 1 tile(s) into Ground_Class
+14:16:51 |   GP> Mosaicking 1 tile(s) into Slope_deg
+14:16:51 |   GP> Mosaicking 1 tile(s) into Roughness_m
+14:16:51 |   GP> Mosaicking 1 tile(s) into Obstacle_Height_m
+14:16:51 |   GP> Writing vector layers...
+14:16:51 |   GP> Run completed in 2.4 min
+14:16:51 |   GP>  
+14:16:51 |   GP> ====================================================================================================
+14:16:51 |   GP> RESULTS - 60 candidates (best first)
+14:16:51 |   GP> Rank  HLZ_ID   Rating            Score  Slope  Approach(from/angle)  MGRS                   Main limiting factor
+14:16:51 |   GP> ----  -------  ----------------  -----  -----  --------------------  ---------------------  --------------------
+14:16:51 |   GP>    1  HLZ-01   Highly suitable    99.1   0.3d  250 / -0.4 deg        18T VR 45906 30941     None - all criteria well within limits
+14:16:51 |   GP>    2  HLZ-02   Highly suitable    99.1   0.3d  250 / -0.4 deg        18T VR 45906 31016     None - all criteria well within limits
+14:16:51 |   GP>    3  HLZ-03   Highly suitable    99.1   0.3d  240 / -0.4 deg        18T VR 45978 30914     None - all criteria well within limits
+14:16:51 |   GP>    4  HLZ-04   Highly suitable    99.1   0.3d  250 / -0.4 deg        18T VR 45903 31227     None - all criteria well within limits
+14:16:51 |   GP>    5  HLZ-05   Highly suitable    99.1   0.3d  250 / -0.4 deg        18T VR 45922 31151     None - all criteria well within limits
+14:16:51 |   GP>    6  HLZ-06   Highly suitable    99.1   0.3d  250 / -0.4 deg        18T VR 45906 31066     None - all criteria well within limits
+14:16:51 |   GP>    7  HLZ-07   Highly suitable    99.1   0.3d  250 / -0.4 deg        18T VR 45946 31107     None - all criteria well within limits
+14:16:51 |   GP>    8  HLZ-08   Highly suitable    99.1   0.3d  240 / -0.4 deg        18T VR 45970 31063     None - all criteria well within limits
+14:16:51 |   GP>    9  HLZ-09   Highly suitable    99.1   0.3d  240 / -0.4 deg        18T VR 46030 30941     None - all criteria well within limits
+14:16:51 |   GP>   10  HLZ-10   Highly suitable    99.1   0.3d  250 / -0.4 deg        18T VR 45906 31316     None - all criteria well within limits
+14:16:51 |   GP>   11  HLZ-11   Highly suitable    99.1   0.3d  240 / -0.4 deg        18T VR 45987 31146     None - all criteria well within limits
+14:16:51 |   GP>   12  HLZ-12   Highly suitable    99.1   0.3d  240 / -0.4 deg        18T VR 46079 30968     None - all criteria well within limits
+14:16:51 |   GP>   13  HLZ-13   Highly suitable    99.1   0.3d  240 / -0.4 deg        18T VR 46005 31018     None - all criteria well within limits
+14:16:51 |   GP>   14  HLZ-14   Highly suitable    99.1   0.3d  240 / -0.4 deg        18T VR 46011 31102     None - all criteria well within limits
+14:16:51 |   GP>   15  HLZ-15   Highly suitable    99.1   0.3d  240 / -0.4 deg        18T VR 46035 31058     None - all criteria well within limits
+14:16:51 |   GP> ... 45 more candidates in the CSV / HTML report
+14:16:51 |   GP> ====================================================================================================
+14:16:51 |   GP> Geodatabase : C:\Users\Son\AppData\Local\Temp\hlz_smoke_v067_2iwhwufv\data_parent\HLZ_DATA\08_Runs\H_data_folder\HLZ_Results.gdb
+14:16:51 |   GP> HTML report : C:\Users\Son\AppData\Local\Temp\hlz_smoke_v067_2iwhwufv\data_parent\HLZ_DATA\08_Runs\H_data_folder\HLZ_Report.html
+14:16:51 |   GP> CSV table   : C:\Users\Son\AppData\Local\Temp\hlz_smoke_v067_2iwhwufv\data_parent\HLZ_DATA\08_Runs\H_data_folder\HLZ_Candidates.csv
+14:16:51 |   GP> Run log     : C:\Users\Son\AppData\Local\Temp\hlz_smoke_v067_2iwhwufv\data_parent\HLZ_DATA\08_Runs\H_data_folder\hlz_run.log
+14:16:51 |   GP> Planning aid only: confirm every site by ground/aerial reconnaissance and with the operator's performance data.
+14:16:51 |   GP> Succeeded at October 7, 2026 2:16:51 PM (Elapsed Time: 2 minutes 23 seconds)
+14:16:51 | PASS H: analysis ran from the data folder alone
+14:16:51 | PASS H: the DSM and the water layer from the data folder were used
+14:16:51 | scenario H finished in 147.6 s
+14:16:51 | --- scenario I_river_line ---
+14:19:09 |   GP> Start Time: October 7, 2026 2:16:53 PM
+14:19:09 |   GP> HLZ Suitability Tool v0.7.0 | run folder: C:\Users\Son\AppData\Local\Temp\hlz_smoke_v067_2iwhwufv\outputs\I_river_line
+14:19:09 |   GP> Aircraft: Generic medium rotary-wing | Mission: General HLZ screening | Doctrine: Generic planning thresholds
+14:19:09 |   GP> Analysis area 600 x 600 cells at 1.000 m (0.4 km2) in 1 tile(s) of up to 3,896 x 3,896 cells; estimated roughly 1 s-2 s
+14:19:09 |   GP> Exclusion areas applied: C:\Users\Son\AppData\Local\Temp\hlz_smoke_v067_2iwhwufv\inputs.gdb\river (1 lines) | lines widened to 20 m
+14:19:09 |   GP> No obstacle list: towers, masts and wires are checked only if the DSM captured them, and lidar often misses thin structures. Add an Obstacles layer or file for a safer result
+14:19:09 |   GP> OAT given but the aircraft profile has no hover ceilings: density altitude is reported but not used to reject sites
+14:19:09 |   GP> Tile 1/1: 62 candidate(s)
+14:19:09 |   GP> Candidates: 62 after removing 0 tile-seam duplicates (exact checks 67, rejected 5)
+14:19:09 |   GP> Finalising rasters...
+14:19:09 |   GP> Mosaicking 1 tile(s) into Ground_Class
+14:19:09 |   GP> Mosaicking 1 tile(s) into Slope_deg
+14:19:09 |   GP> Mosaicking 1 tile(s) into Roughness_m
+14:19:09 |   GP> Mosaicking 1 tile(s) into Obstacle_Height_m
+14:19:09 |   GP> Writing vector layers...
+14:19:09 |   GP> Run completed in 2.2 min
+14:19:09 |   GP>  
+14:19:09 |   GP> ====================================================================================================
+14:19:09 |   GP> RESULTS - 62 candidates (best first)
+14:19:09 |   GP> Rank  HLZ_ID   Rating            Score  Slope  Approach(from/angle)  MGRS                   Main limiting factor
+14:19:09 |   GP> ----  -------  ----------------  -----  -----  --------------------  ---------------------  --------------------
+14:19:09 |   GP>    1  HLZ-01   Highly suitable    99.1   0.3d  250 / -0.4 deg        18T VR 45906 30941     None - all criteria well within limits
+14:19:09 |   GP>    2  HLZ-02   Highly suitable    99.1   0.3d  240 / -0.4 deg        18T VR 45978 30914     None - all criteria well within limits
+14:19:09 |   GP>    3  HLZ-03   Highly suitable    99.1   0.3d  250 / -0.4 deg        18T VR 45904 30991     None - all criteria well within limits
+14:19:09 |   GP>    4  HLZ-04   Highly suitable    99.1   0.3d  250 / -0.4 deg        18T VR 45903 31227     None - all criteria well within limits
+14:19:09 |   GP>    5  HLZ-05   Highly suitable    99.1   0.3d  250 / -0.4 deg        18T VR 45922 31151     None - all criteria well within limits
+14:19:09 |   GP>    6  HLZ-06   Highly suitable    99.1   0.3d  250 / -0.4 deg        18T VR 45901 31105     None - all criteria well within limits
+14:19:09 |   GP>    7  HLZ-07   Highly suitable    99.1   0.3d  250 / -0.4 deg        18T VR 45951 31110     None - all criteria well within limits
+14:19:09 |   GP>    8  HLZ-08   Highly suitable    99.1   0.3d  240 / -0.4 deg        18T VR 46030 30941     None - all criteria well within limits
+14:19:09 |   GP>    9  HLZ-09   Highly suitable    99.1   0.3d  240 / -0.4 deg        18T VR 46062 30902     None - all criteria well within limits
+14:19:09 |   GP>   10  HLZ-10   Highly suitable    99.1   0.3d  250 / -0.4 deg        18T VR 45906 31316     None - all criteria well within limits
+14:19:09 |   GP>   11  HLZ-11   Highly suitable    99.1   0.3d  240 / -0.4 deg        18T VR 45987 31146     None - all criteria well within limits
+14:19:09 |   GP>   12  HLZ-12   Highly suitable    99.1   0.3d  240 / -0.4 deg        18T VR 46120 30905     None - all criteria well within limits
+14:19:09 |   GP>   13  HLZ-13   Highly suitable    99.1   0.3d  240 / -0.4 deg        18T VR 46019 31008     None - all criteria well within limits
+14:19:09 |   GP>   14  HLZ-14   Highly suitable    99.1   0.3d  240 / -0.4 deg        18T VR 46066 30989     None - all criteria well within limits
+14:19:09 |   GP>   15  HLZ-15   Highly suitable    99.1   0.3d  240 / -0.4 deg        18T VR 46090 30945     None - all criteria well within limits
+14:19:09 |   GP> ... 47 more candidates in the CSV / HTML report
+14:19:09 |   GP> ====================================================================================================
+14:19:09 |   GP> Geodatabase : C:\Users\Son\AppData\Local\Temp\hlz_smoke_v067_2iwhwufv\outputs\I_river_line\HLZ_Results.gdb
+14:19:09 |   GP> HTML report : C:\Users\Son\AppData\Local\Temp\hlz_smoke_v067_2iwhwufv\outputs\I_river_line\HLZ_Report.html
+14:19:09 |   GP> CSV table   : C:\Users\Son\AppData\Local\Temp\hlz_smoke_v067_2iwhwufv\outputs\I_river_line\HLZ_Candidates.csv
+14:19:09 |   GP> Run log     : C:\Users\Son\AppData\Local\Temp\hlz_smoke_v067_2iwhwufv\outputs\I_river_line\hlz_run.log
+14:19:09 |   GP> Planning aid only: confirm every site by ground/aerial reconnaissance and with the operator's performance data.
+14:19:09 |   GP> Succeeded at October 7, 2026 2:19:09 PM (Elapsed Time: 2 minutes 16 seconds)
+14:19:10 | PASS I: no touchdown point within 25 m + 10 m of the river line (nearest 38.5 m)
+14:19:10 | PASS I: line width recorded in the metadata
+14:19:10 | --- scenario J_obstacles ---
+14:21:30 |   GP> Start Time: October 7, 2026 2:19:11 PM
+14:21:30 |   GP> HLZ Suitability Tool v0.7.0 | run folder: C:\Users\Son\AppData\Local\Temp\hlz_smoke_v067_2iwhwufv\outputs\J_obstacles
+14:21:30 |   GP> Aircraft: Generic medium rotary-wing | Mission: General HLZ screening | Doctrine: Generic planning thresholds
+14:21:30 |   GP> Analysis area 600 x 600 cells at 1.000 m (0.4 km2) in 1 tile(s) of up to 3,896 x 3,896 cells; estimated roughly 1 s-2 s
+14:21:30 |   GP> No exclusion layer: water, wetlands and other unsuitable surfaces are NOT excluded, so a lake can appear as a perfect landing zone. Add a water polygon layer and check candidates on imagery
+14:21:30 |   GP> Listed obstacles applied: towers, towers_j.csv, towers_j.geojson: 3 obstacles (3 points), buffer 10 m, tallest 61 m AGL, 1 with an assumed height; heights from AGL_FT, height_m
+14:21:30 |   GP> 1 of 3 obstacles have no height in the data: the default height is assumed for them. Check the tallest ones.
+14:21:30 |   GP> OAT given but the aircraft profile has no hover ceilings: density altitude is reported but not used to reject sites
+14:21:30 |   GP> Tile 1/1: 67 candidate(s)
+14:21:30 |   GP> Candidates: 67 after removing 0 tile-seam duplicates (exact checks 71, rejected 4)
+14:21:30 |   GP> Finalising rasters...
+14:21:30 |   GP> Mosaicking 1 tile(s) into Ground_Class
+14:21:30 |   GP> Mosaicking 1 tile(s) into Slope_deg
+14:21:30 |   GP> Mosaicking 1 tile(s) into Roughness_m
+14:21:30 |   GP> Mosaicking 1 tile(s) into Obstacle_Height_m
+14:21:30 |   GP> Writing vector layers...
+14:21:30 |   GP> Run completed in 2.3 min
+14:21:30 |   GP>  
+14:21:30 |   GP> ====================================================================================================
+14:21:30 |   GP> RESULTS - 67 candidates (best first)
+14:21:30 |   GP> Rank  HLZ_ID   Rating            Score  Slope  Approach(from/angle)  MGRS                   Main limiting factor
+14:21:30 |   GP> ----  -------  ----------------  -----  -----  --------------------  ---------------------  --------------------
+14:21:30 |   GP>    1  HLZ-01   Highly suitable    99.1   0.3d  250 / -0.4 deg        18T VR 45906 30941     None - all criteria well within limits
+14:21:30 |   GP>    2  HLZ-02   Highly suitable    99.1   0.3d  250 / -0.4 deg        18T VR 45951 30918     None - all criteria well within limits
+14:21:30 |   GP>    3  HLZ-03   Highly suitable    99.1   0.3d  250 / -0.4 deg        18T VR 45906 31016     None - all criteria well within limits
+14:21:30 |   GP>    4  HLZ-04   Highly suitable    99.1   0.3d  250 / -0.4 deg        18T VR 45906 31066     None - all criteria well within limits
+14:21:30 |   GP>    5  HLZ-05   Highly suitable    99.1   0.3d  250 / -0.4 deg        18T VR 45903 31227     None - all criteria well within limits
+14:21:30 |   GP>    6  HLZ-06   Highly suitable    99.1   0.3d  240 / -0.4 deg        18T VR 46000 30930     None - all criteria well within limits
+14:21:30 |   GP>    7  HLZ-07   Highly suitable    99.1   0.3d  250 / -0.4 deg        18T VR 45922 31151     None - all criteria well within limits
+14:21:30 |   GP>    8  HLZ-08   Highly suitable    99.1   0.3d  230 / -0.2 deg        18T VR 46052 31499     None - all criteria well within limits
+14:21:30 |   GP>    9  HLZ-09   Highly suitable    99.1   0.3d  250 / -0.4 deg        18T VR 45906 31316     None - all criteria well within limits
+14:21:30 |   GP>   10  HLZ-10   Highly suitable    99.1   0.3d  250 / -0.4 deg        18T VR 45946 31107     None - all criteria well within limits
+14:21:30 |   GP>   11  HLZ-11   Highly suitable    99.1   0.3d  240 / -0.4 deg        18T VR 45970 31063     None - all criteria well within limits
+14:21:30 |   GP>   12  HLZ-12   Highly suitable    99.1   0.3d  250 / -0.4 deg        18T VR 45928 31271     None - all criteria well within limits
+14:21:30 |   GP>   13  HLZ-13   Highly suitable    99.1   0.3d  240 / -0.4 deg        18T VR 45987 31146     None - all criteria well within limits
+14:21:30 |   GP>   14  HLZ-14   Highly suitable    99.1   0.3d  240 / -0.4 deg        18T VR 46005 31018     None - all criteria well within limits
+14:21:30 |   GP>   15  HLZ-15   Highly suitable    99.1   0.3d  290 / -0.2 deg        18T VR 46102 31493     None - all criteria well within limits
+14:21:30 |   GP> ... 52 more candidates in the CSV / HTML report
+14:21:30 |   GP> ====================================================================================================
+14:21:30 |   GP> Geodatabase : C:\Users\Son\AppData\Local\Temp\hlz_smoke_v067_2iwhwufv\outputs\J_obstacles\HLZ_Results.gdb
+14:21:30 |   GP> HTML report : C:\Users\Son\AppData\Local\Temp\hlz_smoke_v067_2iwhwufv\outputs\J_obstacles\HLZ_Report.html
+14:21:30 |   GP> CSV table   : C:\Users\Son\AppData\Local\Temp\hlz_smoke_v067_2iwhwufv\outputs\J_obstacles\HLZ_Candidates.csv
+14:21:30 |   GP> Run log     : C:\Users\Son\AppData\Local\Temp\hlz_smoke_v067_2iwhwufv\outputs\J_obstacles\hlz_run.log
+14:21:30 |   GP> Planning aid only: confirm every site by ground/aerial reconnaissance and with the operator's performance data.
+14:21:30 |   GP> Succeeded at October 7, 2026 2:21:30 PM (Elapsed Time: 2 minutes 18 seconds)
+14:21:30 | PASS J: three obstacles applied (layer, CSV, GeoJSON): 3
+14:21:30 | PASS J: one obstacle has an assumed height: 1
+14:21:30 | PASS J: heights read (layer feet converted to 61.0 m, CSV 40 m): [30.0, 40.0, 61.0]
+14:21:30 | PASS J: no touchdown point within the cleared zone of an obstacle (nearest 46.3 m)
+14:21:30 | --- scenario K_points_overview ---
+14:23:52 |   GP> Start Time: October 7, 2026 2:21:31 PM
+14:23:52 |   GP> HLZ Suitability Tool v0.7.0 | run folder: C:\Users\Son\AppData\Local\Temp\hlz_smoke_v067_2iwhwufv\outputs\K_points_overview
+14:23:52 |   GP> Aircraft: Generic medium rotary-wing | Mission: General HLZ screening | Doctrine: Generic planning thresholds
+14:23:52 |   GP> Terrain overview grid: 100 m cells, 36 cells in the analysis window
+14:23:52 |   GP> Analysis area 600 x 600 cells at 1.000 m (0.4 km2) in 1 tile(s) of up to 3,896 x 3,896 cells; estimated roughly 1 s-2 s
+14:23:52 |   GP> Exclusion areas applied: C:\Users\Son\AppData\Local\Temp\hlz_smoke_v067_2iwhwufv\inputs.gdb\hazards (3 points) | points given a 15 m radius
+14:23:52 |   GP> No obstacle list: towers, masts and wires are checked only if the DSM captured them, and lidar often misses thin structures. Add an Obstacles layer or file for a safer result
+14:23:52 |   GP> OAT given but the aircraft profile has no hover ceilings: density altitude is reported but not used to reject sites
+14:23:52 |   GP> Tile 1/1: 66 candidate(s)
+14:23:52 |   GP> Candidates: 66 after removing 0 tile-seam duplicates (exact checks 71, rejected 5)
+14:23:52 |   GP> Overview grid: 36 cells with data; 24 High, 7 Medium, 2 Low and 3 with no area passing the ground test
+14:23:52 |   GP> Finalising rasters...
+14:23:52 |   GP> Mosaicking 1 tile(s) into Ground_Class
+14:23:52 |   GP> Mosaicking 1 tile(s) into Slope_deg
+14:23:52 |   GP> Mosaicking 1 tile(s) into Roughness_m
+14:23:52 |   GP> Mosaicking 1 tile(s) into Obstacle_Height_m
+14:23:52 |   GP> Writing vector layers...
+14:23:52 |   GP> Run completed in 2.3 min
+14:23:52 |   GP>  
+14:23:52 |   GP> ====================================================================================================
+14:23:52 |   GP> RESULTS - 66 candidates (best first)
+14:23:52 |   GP> Rank  HLZ_ID   Rating            Score  Slope  Approach(from/angle)  MGRS                   Main limiting factor
+14:23:52 |   GP> ----  -------  ----------------  -----  -----  --------------------  ---------------------  --------------------
+14:23:52 |   GP>    1  HLZ-01   Highly suitable    99.1   0.3d  250 / -0.4 deg        18T VR 45906 30941     None - all criteria well within limits
+14:23:52 |   GP>    2  HLZ-02   Highly suitable    99.1   0.3d  250 / -0.4 deg        18T VR 45906 31016     None - all criteria well within limits
+14:23:52 |   GP>    3  HLZ-03   Highly suitable    99.1   0.3d  240 / -0.4 deg        18T VR 45978 30914     None - all criteria well within limits
+14:23:52 |   GP>    4  HLZ-04   Highly suitable    99.1   0.3d  250 / -0.4 deg        18T VR 45903 31227     None - all criteria well within limits
+14:23:52 |   GP>    5  HLZ-05   Highly suitable    99.1   0.3d  250 / -0.4 deg        18T VR 45922 31151     None - all criteria well within limits
+14:23:52 |   GP>    6  HLZ-06   Highly suitable    99.1   0.3d  250 / -0.4 deg        18T VR 45906 31066     None - all criteria well within limits
+14:23:52 |   GP>    7  HLZ-07   Highly suitable    99.1   0.3d  240 / -0.4 deg        18T VR 46030 30941     None - all criteria well within limits
+14:23:52 |   GP>    8  HLZ-08   Highly suitable    99.1   0.3d  240 / -0.4 deg        18T VR 46059 30900     None - all criteria well within limits
+14:23:52 |   GP>    9  HLZ-09   Highly suitable    99.1   0.3d  250 / -0.4 deg        18T VR 45950 31040     None - all criteria well within limits
+14:23:52 |   GP>   10  HLZ-10   Highly suitable    99.1   0.3d  250 / -0.4 deg        18T VR 45940 31104     None - all criteria well within limits
+14:23:52 |   GP>   11  HLZ-11   Highly suitable    99.1   0.3d  250 / -0.4 deg        18T VR 45906 31316     None - all criteria well within limits
+14:23:52 |   GP>   12  HLZ-12   Highly suitable    99.1   0.3d  240 / -0.4 deg        18T VR 45987 31146     None - all criteria well within limits
+14:23:52 |   GP>   13  HLZ-13   Highly suitable    99.1   0.3d  240 / -0.4 deg        18T VR 46109 30907     None - all criteria well within limits
+14:23:52 |   GP>   14  HLZ-14   Highly suitable    99.1   0.3d  240 / -0.4 deg        18T VR 46043 31042     None - all criteria well within limits
+14:23:52 |   GP>   15  HLZ-15   Highly suitable    99.1   0.3d  240 / -0.4 deg        18T VR 46065 30997     None - all criteria well within limits
+14:23:52 |   GP> ... 51 more candidates in the CSV / HTML report
+14:23:52 |   GP> ====================================================================================================
+14:23:52 |   GP> Geodatabase : C:\Users\Son\AppData\Local\Temp\hlz_smoke_v067_2iwhwufv\outputs\K_points_overview\HLZ_Results.gdb
+14:23:52 |   GP> HTML report : C:\Users\Son\AppData\Local\Temp\hlz_smoke_v067_2iwhwufv\outputs\K_points_overview\HLZ_Report.html
+14:23:52 |   GP> CSV table   : C:\Users\Son\AppData\Local\Temp\hlz_smoke_v067_2iwhwufv\outputs\K_points_overview\HLZ_Candidates.csv
+14:23:52 |   GP> Overview grid: C:\Users\Son\AppData\Local\Temp\hlz_smoke_v067_2iwhwufv\outputs\K_points_overview\HLZ_Results.gdb\HLZ_Overview_Grid
+14:23:52 |   GP> Run log     : C:\Users\Son\AppData\Local\Temp\hlz_smoke_v067_2iwhwufv\outputs\K_points_overview\hlz_run.log
+14:23:52 |   GP> Planning aid only: confirm every site by ground/aerial reconnaissance and with the operator's performance data.
+14:23:52 |   GP> Succeeded at October 7, 2026 2:23:52 PM (Elapsed Time: 2 minutes 20 seconds)
+14:23:52 | PASS K: three hazard points with a 15 m radius recorded in the metadata
+14:23:52 | PASS K: no touchdown point within 25 m + 15 m of a hazard point (nearest 41.7 m)
+14:23:52 | PASS K: HLZ_Overview_Grid written to the geodatabase
+14:23:53 | PASS K: 36 overview cells
+14:23:53 | PASS K: the overview counts every candidate once (66 of 66)
+14:23:53 | PASS K: the open field shows as passing in the overview
+14:23:53 | PASS K: the overview is recorded in the metadata
+14:23:53 | NOTE map styling (add_results_to_map) needs ArcGIS Pro UI - test manually with the tool dialog
+14:23:53 | SUMMARY passed=128 failed=0
