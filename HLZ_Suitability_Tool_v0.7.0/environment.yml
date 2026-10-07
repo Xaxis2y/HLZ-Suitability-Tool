@@ -1,0 +1,13 @@
+# SPDX-License-Identifier: GPL-2.0-or-later
+# Copyright (c) 2026 Eui Soo SON
+# OPTIONAL environment for the command-line interface and CLI end-to-end test.
+# The ArcGIS Pro toolbox does NOT need it (it runs in a clone of arcgispro-py3).
+name: hlz-cli-v04
+channels:
+  - conda-forge
+dependencies:
+  - python=3.11
+  - numpy>=1.24
+  - scipy>=1.10
+  - rasterio>=1.3
+  - pytest
