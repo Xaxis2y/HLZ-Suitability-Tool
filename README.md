@@ -1,7 +1,7 @@
 <!-- SPDX-License-Identifier: GPL-2.0-or-later -->
 <!-- Copyright (c) 2026 Eui Soo SON -->
 
-# HLZ Suitability Tool v0.7.0
+# HLZ Suitability Tool v0.10.4
 
 An ArcGIS Pro Python toolbox (`.pyt`) that screens high-resolution elevation data for
 helicopter landing-zone (HLZ) candidates. It checks slope, surface roughness, obstacles in the
@@ -12,6 +12,65 @@ and a CSV table, with MGRS grid references.
 > **Planning aid only.** It does not certify a landing zone. Every site must be confirmed by
 > ground or aerial reconnaissance and with the operator's aircraft performance data. The
 > shipped profiles are planning defaults, not approved doctrine.
+
+## What changed in v0.10.4
+
+Documentation release. No change to the analysis or the toolbox.
+
+* **New:** `docs\HLZ_Suitability_Data_Type_Reference.html`. Every input and output with its data type, units, allowed values and which program reads it (ArcGIS Pro or the command line), plus the 44 CSV columns and the rejection reason codes.
+* **User Manual rewritten to v0.10.4.** New sections on latitude/longitude data (4.7), point exclusions (4.8), the drawn area (5.8), the size what-if (5.9), spacing and sites (5.10), report units and the overview grid (5.11), primary sites and alternates (6.8), the overview grid (6.9), the rejection summary (6.10), metres and feet (6.11) and stage timing (9.8). Parameter tables, layer list, Appendix A, troubleshooting and the test counts are updated.
+* **Quick Start and Data Requirements updated** (new fields, basemap, sites, latitude/longitude data, point exclusions).
+* The version string is updated in every document and in the code.
+
+## What changed in v0.10.3
+
+* ArcPy: single-tile rasters are copied instead of mosaicked (unverified), and the log shows per-step timing for rasters and feature classes. See the CHANGELOG for what the v0.10.1 smoke log showed.
+
+## What changed in v0.10.2
+
+* Report map is full width. The OpenStreetMap basemap (blocked for reports opened from disk) is replaced by Esri Streets.
+
+## What changed in v0.10.1
+
+* The map in the HTML report is square (1:1) instead of a wide strip.
+
+## What changed in v0.10.0
+
+* **One primary per site.** Candidates whose cleared areas overlap form a site. The safest one (best rating, then score, approach sectors and data quality: the existing ranking) is the **PRIMARY**; the others are **ALTERNATE** (also usable at the same site). New columns `Site_Role`, `Site_Primary_ID`, `Site_Alternates` (CSV, GeoJSON) and fields `Site_Role`, `Site_Primary`, `Site_Alts` (geodatabase).
+* **Map in ArcGIS Pro:** primary sites are solid and coloured by rating, labelled `HLZ-xx (score) +N` where N is the number of alternates. Alternates are drawn as hollow dashed blue-grey circles (layers "HLZ alternates" and "HLZ alternates cleared ring"). Approach lines and sectors are drawn for primaries only. Switch the alternate layers off for a clean view.
+* **HTML report:** the table, cards and map list each site once ("+N alt." beside the ID). Alternates stay in `HLZ_Candidates.csv`.
+* Not verified in ArcGIS Pro yet: the definition queries, the dashed style and the new fields. Run the smoke test and check the map.
+
+## What changed in v0.9.0
+
+* **Sites and spacing:** candidates with overlapping cleared areas share a `Site_No`; optional minimum spacing (`--min-spacing`, toolbox "Minimum spacing between candidates") drops weaker candidates that are too close to a better one.
+* **Latitude/longitude DTM:** projected automatically to UTM (rasterio `WarpedVRT`; ArcGIS Pro `ProjectRaster` into `HLZ_Projected.gdb`). Turn off with `--no-auto-reproject` or the Advanced option.
+* **Aircraft size what-if:** override the landing-point diameter and cleared ring for one run (`--tdp-diameter`, `--cleared-ring`).
+* Not verified in ArcGIS Pro yet: drawn area (v0.8.0), `ProjectRaster` step, new GDB fields. Run the smoke test and return the log.
+
+## What changed in v0.8.0
+
+* **Why were cells and sites rejected?** Every run now explains itself: the run log, `HLZ_Report.html` (section "Why cells and
+  sites were rejected") and the new `HLZ_Rejection_Summary.csv` give the share of cells that failed on steep ground, rough
+  ground, too little data, obstacles, an exclusion area or a listed obstacle (each cell is counted once, under the first
+  test it fails), and how many screened sites were rejected by the exact check, removed as tile-seam duplicates or dropped by the
+  candidate limit. `run_metadata.json` has the same numbers in a `rejections` block.
+* **Metres and feet.** The HTML report shows lengths in metres and feet (new field **Length units in the HTML report**, Advanced:
+  Metres and feet / Metres only / Feet first). The CSV, the geodatabase and the GeoJSON always carry both: seven columns
+  or fields in feet were added after the existing ones (names end in `_ft`). Nothing is converted in the analysis. Command line:
+  `--units METRIC|BOTH|IMPERIAL`.
+* **Draw the area on the map.** The new field **Or draw the area of interest on the map (polygon)** replaces having to prepare
+  a polygon layer for a quick look. Use it or the polygon layer, not both. The drawn polygon is not saved with the run: save it
+  to a layer if you want to repeat the run.
+* Toolbox: two new inputs (positions 35-36), derived outputs now 37-38. Tests: 116 unit tests (13 new), 214 command-line checks,
+  ArcPy smoke scenario L (12 scenarios in all).
+* **Not verified here:** everything that needs ArcGIS Pro (the drawing tool in the dialog, the new geodatabase fields). Run
+  `RUN_ARCPY_SMOKE_TEST.bat` and return the log, then try the drawing tool once by hand.
+
+## What changed in v0.7.1
+
+The pre-run estimate in the dialog and the run log now includes the measured ArcGIS Pro overhead, and every run log ends with
+a "Stage timing (s)" line (also stored as `stage_seconds` in `run_metadata.json`). Nothing else changed.
 
 ## What changed in v0.7.0
 
@@ -49,7 +108,7 @@ the candidates.
   (17 new), 163 command-line checks (24 new), ArcPy smoke scenario K (11 scenarios in all).
 * **Not verified here:** everything that needs ArcGIS Pro (the new fields, the point-layer reading, the overview layer and
   its map styling, ArcPy smoke scenario K). Run `RUN_ARCPY_SMOKE_TEST.bat` and return the log. The User Manual and the Data
-  Requirements document (.docx) were not rewritten for v0.7.0; this README, the CHANGELOG, the Quick Start and the
+  Requirements document (.docx) were not rewritten for v0.10.4; this README, the CHANGELOG, the Quick Start and the
   in-dialog help are current.
 
 ## What changed in v0.6.9
@@ -165,7 +224,8 @@ field shows the resulting radius. Unit tests: 74.
 
 Start with `docs\HLZ_Suitability_Quick_Start.html` (open it in a browser). The full guide is
 `docs\HLZ_Suitability_User_Manual.docx`, and `docs\HLZ_Suitability_Data_Requirements.docx` lists the data and software
-the tool needs, what is mandatory and what is optional, and how each affects accuracy.
+the tool needs, what is mandatory and what is optional, and how each affects accuracy. `docs\HLZ_Suitability_Data_Type_Reference.html`
+lists every input and output with its data type, units and allowed values.
 
 ## What changed in v0.6.4
 
@@ -299,7 +359,7 @@ Disk use: about 1-3 GB of results per 1,000 km2.
 
 ## Quick start in ArcGIS Pro
 
-1. Unzip the release folder anywhere, for example `C:\GIS\HLZ_Suitability_Tool_v0.7.0`.
+1. Unzip the release folder anywhere, for example `C:\GIS\HLZ_Suitability_Tool_v0.10.4`.
    Keep the folder structure intact: the `.pyt` loads `hlzcore\` and `profiles\` from its
    parent folder.
 2. In ArcGIS Pro, open the **Catalog** pane, right-click **Toolboxes**, choose **Add Toolbox**,
@@ -337,7 +397,8 @@ environment already contains everything required.
 | `HLZ_Results.gdb\Ground_Class` | 1 = passes for any heading, 2 = upslope landing only, 0 = fails |
 | `Slope_deg`, `Roughness_m`, `Obstacle_Height_m` | Supporting rasters, hidden by default; all rasters cover the AOI plus a ~50 m halo |
 | `HLZ_Report.html` | Offline report: summary, overview map, ranked table, per-candidate approach roses, warnings, limitations |
-| `HLZ_Candidates.csv` | Same table, ready for Excel; the header is the first row |
+| `HLZ_Candidates.csv` | Same table, ready for Excel; the header is the first row; since v0.8.0 seven columns repeat the lengths in feet; since v0.9.0 `Site_No`; since v0.10.0 the last three columns are `Site_Role`, `Site_Primary_ID`, `Site_Alternates` |
+| `HLZ_Rejection_Summary.csv` | v0.8.0: why cells failed the ground test and how the candidate list was reduced |
 | `run_metadata.json` | Full provenance: inputs, profiles, options, every sector, warnings |
 | `hlz_run.log` | Step-by-step run log |
 
@@ -387,7 +448,7 @@ Anaconda Prompt, which has no `arcpy`).
 (fast); otherwise `arcgispro-py3` is cloned (a few GB, a few minutes). Nothing is installed.
 
 ```text
-cd /d "C:\GIS\HLZ_Suitability_Tool_v0.7.0"
+cd /d "C:\GIS\HLZ_Suitability_Tool_v0.10.4"
 SETUP_HLZ_ENV.bat
 ```
 
@@ -397,13 +458,13 @@ You can also keep using `hlz-arcpy-v04`: every script accepts any dedicated clon
 
 ```text
 activate hlz
-cd /d "C:\GIS\HLZ_Suitability_Tool_v0.7.0"
+cd /d "C:\GIS\HLZ_Suitability_Tool_v0.10.4"
 RUN_ALL_TESTS.bat
 ```
 
 `RUN_ALL_TESTS.bat --quick` uses a 3 km benchmark instead of 10 km. Each step runs separately,
 so one failure never hides the others. Send back **one file**:
-`logs\hlz_test_logs_v0.7.0.zip`. It holds a summary, an environment report (CPU, RAM, disk,
+`logs\hlz_test_logs_v0.10.4.zip`. It holds a summary, an environment report (CPU, RAM, disk,
 package versions), every test log and the console output of each step.
 
 | Step | What it tests | Needs |
