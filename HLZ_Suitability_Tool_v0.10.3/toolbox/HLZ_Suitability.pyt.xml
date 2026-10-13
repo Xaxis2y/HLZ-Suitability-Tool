@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- SPDX-License-Identifier: GPL-2.0-or-later -->
+<!-- Copyright (c) 2026 Eui Soo SON -->
+<metadata xml:lang="en">
+<Esri><CreaDate>20261008</CreaDate><ArcGISFormat>1.0</ArcGISFormat><SyncOnce>TRUE</SyncOnce></Esri>
+<toolbox name="HLZ_Suitability" alias="hlz"><arcToolboxHelpPath>c:\program files\arcgis\pro\Resources\Help\gp</arcToolboxHelpPath><toolsets/></toolbox>
+<dataIdInfo><idCitation><resTitle>HLZ Suitability Tool v0.10.3</resTitle></idCitation>
+<idAbs>&lt;DIV STYLE="text-align:Left;"&gt;&lt;P&gt;&lt;SPAN&gt;Helicopter landing-zone screening tools. Start with &amp;#x27;0. Set Up and Audit Data Folder&amp;#x27;, then &amp;#x27;1. Analyze HLZ Suitability&amp;#x27;.&lt;/SPAN&gt;&lt;/P&gt;&lt;/DIV&gt;</idAbs>
+<idCredit>Copyright (c) 2026 Eui Soo SON - GPL-2.0-or-later</idCredit></dataIdInfo>
+<distInfo><distributor><distorFormat><formatName>ArcToolbox Toolbox</formatName></distorFormat></distributor></distInfo>
+<mdHrLv><ScopeCd value="005"/></mdHrLv>
+</metadata>
