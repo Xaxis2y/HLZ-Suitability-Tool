@@ -1,0 +1,13 @@
+{
+  "_license": "SPDX-License-Identifier: GPL-2.0-or-later",
+  "_copyright": "Copyright (c) 2026 Eui Soo SON",
+  "_notes": "PLANNING DEFAULTS ONLY - replace every value with operator/authority-approved data before operational use.",
+  "profile_id": "generic-planning-v0.4",
+  "display_name": "Generic planning thresholds",
+  "source_title": "Internal planning defaults (no doctrine source)",
+  "source_edition": "v0.4",
+  "approval_status": "planning_only",
+  "highly_suitable_score": 80.0,
+  "suitable_score": 60.0,
+  "marginal_score": 40.0
+}

@@ -1,0 +1,23 @@
+{
+  "_license": "SPDX-License-Identifier: GPL-2.0-or-later",
+  "_copyright": "Copyright (c) 2026 Eui Soo SON",
+  "_notes": "PLANNING DEFAULTS ONLY - replace every value with operator/authority-approved data before operational use. max_input_cells = terrain cells per tile (memory); there is no limit on total area.",
+  "profile_id": "screening-v0.6.1",
+  "display_name": "General HLZ screening",
+  "slope_weight": 25.0,
+  "roughness_weight": 20.0,
+  "approach_weight": 30.0,
+  "obstacle_weight": 15.0,
+  "data_quality_weight": 10.0,
+  "azimuth_step_deg": 10.0,
+  "ray_step_deg": 5.0,
+  "max_candidates": 1000,
+  "max_candidates_per_tile": 100,
+  "minimum_candidate_separation_factor": 1.0,
+  "max_input_cells": 16000000,
+  "minimum_valid_fraction": 0.95,
+  "minimum_ring_coverage_fraction": 0.9,
+  "minimum_approach_coverage_fraction": 0.8,
+  "upslope_alignment_tolerance_deg": 30.0,
+  "tile_target_cells": 1500000
+}
